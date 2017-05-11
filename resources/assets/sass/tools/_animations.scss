@@ -1,0 +1,29 @@
+@import "variables";
+
+/**
+ * Fade and scale content
+ */
+@keyframes fadeOut {
+  from {
+    transform: translateY(-50px);
+  }
+  
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/**
+ * Zoom content
+ */
+@keyframes zoom {
+	from {
+    	transform: scale(0);
+    }
+    
+  to {
+    opacity: 1;
+  	transform: scale(1.0);
+  }
+}

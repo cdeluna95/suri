@@ -1,0 +1,121 @@
+#auth {
+  @extend %bg-welcome;
+  
+  .auth-wrapper {
+    background: darken($white, 5%);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2),
+              			0 10px 20px rgba(0, 0, 0, 0.1);
+    max-width: 30%;
+    margin: 0 auto;
+    opacity: 0;
+    animation: fadeOut 500ms ease forwards;
+    @include posLayout(absolute, $top: 22.5%, $right: 0, $left: 0);
+    @include deviceBreak("max-width: 767.5px") {
+      max-width: 90%;
+    }
+    
+    .auth-title-wrapper {
+      
+      .auth-title {
+        text-align: center;
+        margin: 0 auto;
+        padding: 20px 0;
+        @include textStyle(darken($white, 5%), $source, null, null, null, null, null, 1 1px 1px rgba($black, 0.1), null);
+        @include posLayout(absolute, $top: 0, $right: 0, $left: 0);
+      }
+      
+      .auth-signin,
+      .auth-reset {
+        background: $gold;
+      }
+      
+      .auth-signup {
+        background: $hotpink;
+      }
+    }
+    
+    .auth-form-wrapper {
+      display: block;
+      max-width: 90%;
+      margin: 6em auto 0;
+      @include textStyle(lighten($black, 50%), $pt, null, null, null, null, null, 0 0 1px rgba($black, 0.1), null);
+      
+      .auth-success {
+        text-align: center;
+        background: lighten($green, 10%);
+        margin: 1em 0;
+        padding: 15px 0;
+        @include textStyle(darken($white, 5%), null, null, 900, null, null, null, null, null);
+      }
+      
+      .form-group {
+        
+        .form-control {
+          background: none;
+          padding: 20px 0;
+          @extend %form-style;
+          @extend %light-ease;
+        }
+        
+        .form-control::-webkit-input-placeholder {
+        	color: rgba($black, 0.3);
+        	font-weight: 900;
+        }
+        
+        .form-signin,
+        .form-reset {
+          border-bottom: 4px solid $gold;
+          
+          &:focus {
+            border-bottom: 4px solid $hotpink;
+          }
+        }
+        
+        .form-signup {
+          border-bottom: 4px solid $hotpink;
+          
+          &:focus {
+            border-bottom: 4px solid $gold;
+          }
+        }
+        
+        .form-forgot {
+          
+          .btn-forgot {
+            @extend %light-ease;
+            @include textStyle($hotpink, null, 0.85rem, null, null, null, null, null, null);
+            
+            &:hover,
+            &:focus {
+              @include textStyle(lighten($hotpink, 5%), null, null, null, null, null, none, null, null);
+            }
+          }
+        }
+        
+        .form-submit {
+          margin: 1em 0 0 0;
+          @include flexContLayout(flex, $justify-content: center);
+          @include deviceBreak("max-width: 767.5px") {
+            flex-direction: column;
+          }
+          
+          .btn-submit {
+            text-align: center;
+            flex: 1;
+            @extend %form-style;
+            @include textStyle(darken($white, 5%), null, 1.25rem, 900, null, null, none, 1px 1px 1px rgba($black, 0.1), null);
+          }
+          
+          .btn-signin {
+            @include btnStyle($gold, null, null, null, 15px 0);
+          }
+          
+          .btn-signup,
+          .btn-reset {
+            @include btnStyle($hotpink, null, null, null, 15px 0);
+          }
+        }
+      }
+    }
+  }
+}

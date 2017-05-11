@@ -1,0 +1,71 @@
+/**
+ * Welcome styles
+ */
+#welcome {
+  @extend %bg-welcome;
+  
+  .welcome-wrapper {
+    text-align: center;
+    max-width: 40%;
+    margin: 0 auto;
+    @include posLayout(absolute, $top: 32.5%, $right: 0, $left: 0);
+    @include deviceBreak("max-width: 767.5px") {
+      max-width: 80%;
+    }
+    
+    .suri-title-wrapper {
+      opacity: 0;
+      animation: fadeOut 1000ms ease 200ms forwards;
+      
+      .suri-title {
+        display: inline;
+        @include textStyle(darken($white, 5%), $open, 5rem, 900, null, null, null, 1px 1px 10px rgba($black, 0.2), null);
+        @include deviceBreak("max-width: 767.5px") {
+          font-size: calc(5rem / 1.75);
+        }
+        
+        .suri-span {
+          color: $gold;
+        }
+      }
+    }
+    
+    .suri-subtitle-wrapper {
+      margin: 2em 0;
+      opacity: 0;
+      animation: fadeOut 1000ms ease 400ms forwards;
+      
+      .suri-subtitle {
+        display: inline;
+        @include textStyle(darken($white, 5%), $lato, 1.5rem, 500, null, null, null, 1px 1px 5px rgba($black, 0.2), null);
+        @include deviceBreak("max-width: 767.5px") {
+          font-size: calc(1.5rem / 1.05);
+        }
+        
+        .suri-span {
+          @extend %text-highlight;
+        }
+      }
+    }
+    
+    .suri-started-wrapper {
+      margin: 3em 0;
+      opacity: 0;
+      animation: zoom 1000ms ease 800ms forwards;
+      
+      .suri-started {
+        @include textStyle(darken($white, 5%), $lato, 2rem, 900, null, null, null, 0 0 1px rgba($black, 0.1), null);
+        @include btnStyle($hotpink, null, null, null, 20px 80px);
+        @include deviceBreak("max-width: 767.5px") {
+          font-size: calc(2rem / 1.05);
+          padding: 15px 40px;
+        }
+        
+        &:hover,
+        &:focus {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

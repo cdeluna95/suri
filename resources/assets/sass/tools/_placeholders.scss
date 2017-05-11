@@ -1,0 +1,47 @@
+/**
+ * Highlight importance of text
+ */
+%text-highlight {
+   font-weight: 900;
+   background: $gold;
+   padding: 5px 17.5px;
+}
+
+/**
+ * Set uniform background for guest users
+ */
+%bg-welcome {
+  height: 100%;
+  @include bgProps(rgba($black, 0.5), rgba($black, 0.3), ("../images/supplies.jpg"), center top, cover, no-repeat, null);
+}
+
+/**
+ * Set uniform form control styles
+ */
+%form-style {
+  border: 0;
+  border-radius: 0;
+  outline: 0;
+  box-shadow: none;
+}
+
+/**
+ * Set uniform light ease-in-out transition
+ */
+%light-ease {
+  @include transProps(100ms ease-in-out);
+}
+
+/**
+ * Set uniform regular ease-in-out transition
+ */
+%regular-ease {
+  @include transProps(300ms ease-in-out);
+}
+
+/**
+ * Set uniform cubic-bezier transition
+ */
+%jumpy-bezier {
+  @include transProps(300ms cubic-bezier(1, -1, 0, 2));
+}

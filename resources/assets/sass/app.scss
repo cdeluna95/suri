@@ -1,0 +1,38 @@
+/**
+ * Import all SCSS partial files from other directories
+ */
+@import "tools/fonts";
+@import "tools/components";
+@import "tools/classes";
+@import "tools/animations";
+@import "tools/variables";
+@import "tools/mixins";
+@import "tools/placeholders";
+@import "pages/navbar";
+@import "pages/welcome";
+@import "pages/auth";
+@import "pages/footer";
+
+/**
+ * Set global and pseudo-elements
+ */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-size: 14px;
+}
+
+::selection {
+  color: $white;
+  background: $gold;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
