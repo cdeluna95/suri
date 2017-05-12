@@ -1,0 +1,71 @@
+#suri-app {
+  background: darken($white, 10%);
+  
+  #dashboard {
+    background: $white;
+    box-shadow: 0 -20px 10px rgba(0, 0, 0, 0.2),
+            	  0 -40px 20px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    height: 100%;
+    @include posLayout(fixed, $top: 0, $left: 0);
+    
+    .dashboard-wrapper {
+      text-align: center;
+      margin: 8em 0;
+      
+      .dashboard-title-wrapper {
+        opacity: 0;
+        animation: fadeOut 500ms ease forwards;
+        
+        .dashboard-title {
+          @include textStyle(lighten($black, 50%), $source, 2rem, null, null, null, null, 1 1px 1px rgba($black, 0.1), null);
+        }
+      }
+      
+      .dashboard-list {
+        margin: 1em 0;
+        
+        .dashboard-list-wrapper {
+          opacity: 0;
+          animation: slide 250ms ease forwards;
+          @extend %light-ease;
+          @include flexContLayout(flex, $direction: column);
+          
+          @for $i from 1 through 3 {
+            &:nth-child(#{$i}) {
+              animation-duration: 250ms * $i;
+            }
+          }
+          
+          .dashboard-a {
+            flex: 1;
+            padding: 15px 0;
+            @extend %light-ease;
+            @include textStyle(lighten($black, 50%), $lato, 1.25rem, null, null, null, null, 1 1px 1px rgba($black, 0.1), null);
+            
+            &:hover,
+            &:focus {
+              text-decoration: none;
+            }
+            
+            .fa {
+              color: $hotpink;
+              margin: 0 0.5em;
+              @extend %light-ease;
+            }
+          }
+          
+          &:hover,
+          &:focus {
+            background: $hotpink;
+            
+            .dashboard-a,
+            .fa {
+              color: darken($white, 5%);
+            }
+          }
+        }
+      }
+    }
+  }
+}

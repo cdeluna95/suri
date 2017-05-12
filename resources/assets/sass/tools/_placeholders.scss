@@ -4,6 +4,7 @@
 %text-highlight {
    font-weight: 900;
    background: $gold;
+   display: inline-block;
    padding: 5px 17.5px;
 }
 
@@ -23,6 +24,15 @@
   border-radius: 0;
   outline: 0;
   box-shadow: none;
+}
+
+/**
+ * Set uniform list-style, margin, and padding for unordered lists
+ */
+%ul-even {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 /**

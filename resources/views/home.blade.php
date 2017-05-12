@@ -10,19 +10,38 @@
 @extends('layouts.nav')
 
 @section('user')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
-
-                <div class="panel-body">
-                    You are logged in!
-                </div>
-            </div>
-        </div>
+<div id="dashboard">
+  <div class="dashboard-wrapper">
+    
+    <!-- Title -->
+    <div class="dashboard-title-wrapper">
+      <h2 class="dashboard-title">
+        Dashboard
+      </h2>
     </div>
+    
+    <!-- List -->
+    <div class="dashboard-list">
+      <div class="dashboard-list-wrapper">
+        <a class="dashboard-a" href="{{ route('home') }}">
+          <i class="fa fa-tasks" aria-hidden="true"></i>
+          User Feed
+        </a>
+      </div>
+      <div class="dashboard-list-wrapper">
+        <a class="dashboard-a" href="#">
+          <i class="fa fa-list-alt" aria-hidden="true"></i>
+          Flashcards
+        </a>
+      </div>
+      <div class="dashboard-list-wrapper">
+        <a class="dashboard-a" href="#">
+          <i class="fa fa-question-circle-o" aria-hidden="true"></i>
+          Quizzes
+        </a>
+      </div>
+    </div>
+    
+  </div>
 </div>
 @endsection
-
-@extends('layouts.footer')

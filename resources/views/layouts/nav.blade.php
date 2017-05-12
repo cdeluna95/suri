@@ -1,5 +1,5 @@
 @section('nav')
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-default navbar-static-top">
   <div class="container">
     
     <div class="navbar-header">
@@ -20,24 +20,36 @@
         
         @if (Auth::guest())
           <li>
-            <a class="nav-about" href="#">About</a>
+            <a class="nav-about" href="#">
+              About
+            </a>
           </li>
           <li>
-            <a class="nav-help" href="#">Help</a>
+            <a class="nav-help" href="#">
+              Help
+            </a>
           </li>
           <li>
-            <a class="nav-login" href="{{ route('login') }}">Sign In</a>
+            <a class="nav-login" href="{{ route('login') }}">
+              Sign In
+            </a>
           </li>
           <li>
-            <a class="nav-signup" href="{{ route('register') }}">Sign Up</a>
+            <a class="nav-signup" href="{{ route('register') }}">
+              Sign Up
+            </a>
           </li>
           
         @else
           <li>
-            <a class="nav-about" href="#">About</a>
+            <a class="nav-about" href="#">
+              About
+            </a>
           </li>
           <li>
-            <a class="nav-help" href="#">Help</a>
+            <a class="nav-help" href="#">
+              Help
+            </a>
           </li>
           
           <li class="dropdown">
@@ -48,7 +60,7 @@
             
             <ul class="dropdown-menu" role="menu">
               <li>
-                <a href="#">
+                <a href="{{ route('home') }}">
                   User Feed
                 </a>
               </li>

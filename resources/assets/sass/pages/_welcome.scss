@@ -54,6 +54,7 @@
       animation: zoom 1000ms ease 800ms forwards;
       
       .suri-started {
+        display: inline-block;
         @include textStyle(darken($white, 5%), $lato, 2rem, 900, null, null, null, 0 0 1px rgba($black, 0.1), null);
         @include btnStyle($hotpink, null, null, null, 20px 80px);
         @include deviceBreak("max-width: 767.5px") {

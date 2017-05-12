@@ -5,15 +5,16 @@
   </head>
   
   <body>
+    
+    @yield('nav')
+    
+    @yield('guest')
+    
     <div id="suri-app">
       
       @yield('user')
         
     </div>
-    
-    @yield('nav')
-    
-    @yield('guest')
     
     @yield('footer')
     
