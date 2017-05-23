@@ -10,38 +10,61 @@
 @extends('layouts.nav')
 
 @section('user')
-<div id="dashboard">
-  <div class="dashboard-wrapper">
-    
-    <!-- Title -->
-    <div class="dashboard-title-wrapper">
-      <h2 class="dashboard-title">
-        Dashboard
-      </h2>
+<div id="home">
+
+  <!-- Dashboard -->
+  <div id="dashboard">
+    <div class="dashboard-wrapper">
+      
+      <div class="dashboard-list">
+        <div class="dashboard-title-wrapper">
+          <h2 class="dashboard-title">
+            Dashboard
+          </h2>
+        </div>
+        <div class="dashboard-list-wrapper">
+          <a class="dashboard-a" href="{{ route('home') }}">
+            <i class="fa fa-tasks" aria-hidden="true"></i>
+            User Feed
+          </a>
+        </div>
+        <div class="dashboard-list-wrapper">
+          <a class="dashboard-a" href="#">
+            <i class="fa fa-list-alt" aria-hidden="true"></i>
+            Flashcards
+            </a>
+        </div>
+        <div class="dashboard-list-wrapper">
+          <a class="dashboard-a" href="#">
+            <i class="fa fa-question-circle-o" aria-hidden="true"></i>
+            Quizzes
+          </a>
+        </div>
+      </div>
+      
     </div>
+  </div>
+  
+  <!-- Feed -->
+  <div id="feed">
     
-    <!-- List -->
-    <div class="dashboard-list">
-      <div class="dashboard-list-wrapper">
-        <a class="dashboard-a" href="{{ route('home') }}">
-          <i class="fa fa-tasks" aria-hidden="true"></i>
-          User Feed
-        </a>
-      </div>
-      <div class="dashboard-list-wrapper">
-        <a class="dashboard-a" href="#">
-          <i class="fa fa-list-alt" aria-hidden="true"></i>
-          Flashcards
-        </a>
-      </div>
-      <div class="dashboard-list-wrapper">
-        <a class="dashboard-a" href="#">
-          <i class="fa fa-question-circle-o" aria-hidden="true"></i>
-          Quizzes
-        </a>
-      </div>
+    <!-- Dashboard burger -->
+    <!--<div class="dashboard-burger-wrapper">-->
+    <!--  <div class="dashboard-burger">-->
+    <!--    <span class="dash-bar"></span>-->
+    <!--    <span class="dash-bar"></span>-->
+    <!--    <span class="dash-bar"></span>-->
+    <!--  </div>-->
+    <!--</div>-->
+    
+    <!-- Bulletin -->
+    <div class="reminders-wrapper">
+      <add></add>
+      
+      <reminders></reminders>
     </div>
     
   </div>
+  
 </div>
 @endsection

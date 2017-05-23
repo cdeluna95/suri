@@ -6,6 +6,7 @@
  */
 
 require('./bootstrap');
+require('./jquery');
 
 window.Vue = require('vue');
 
@@ -15,7 +16,9 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example', require('./components/Example.vue'));
+Vue.component('reminders', require('./components/Reminders.vue'));
+Vue.component('note', require('./components/Note.vue'));
+Vue.component('add', require('./components/Add.vue'));
 
 const app = new Vue({
     el: '#suri-app'

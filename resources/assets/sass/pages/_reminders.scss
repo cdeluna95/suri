@@ -1,0 +1,65 @@
+/**
+ * User feed styles
+ */
+.reminders-wrapper {
+  
+  .reminders-add {
+    text-align: center;
+    margin: 2em 0;
+    
+    .btn-plus {
+      display: inline-block;
+      @include btnStyle($hotpink, 0, 0, none, 15px 25px);
+      @include textStyle(darken($white, 5%), $lato, 16px, 900, null, null, null, null, null);
+    }
+    
+    .fa {
+      margin: 0 5px 0 0;
+    }
+    
+    .btn-new {
+      margin: 0 0 0 5px;
+    }
+  }
+  
+  .reminders {
+    margin: 4em 0;
+    @include flexContLayout(flex, $direction: row, $wrap: wrap, $justify-content: center);
+    
+    .note {
+      box-shadow: 0 4px 8px rgba($black, 0.2);
+      width: 200px;
+      height: 200px;
+      margin: 5px;
+      @extend %light-ease;
+      
+      &:nth-child(odd) {
+        background: lighten($blue, 30%);
+        transform: rotate(3deg);
+      }
+      
+      &:nth-child(even) {
+        background: lighten($yellow, 25%);
+        transform: rotate(-3deg);
+      }
+      
+      &:nth-child(3n) {
+        background: lighten($red, 30%);
+        transform: rotate(0);
+      }
+      
+      &:hover,
+      &:focus {
+        box-shadow: 0 4px 8px rgba($black, 0.2),
+                    0 16px 64px rgba($black, 0.1);
+        z-index: 1;
+        transform: scale(1.2);
+      }
+      
+      .note-text {
+        padding: 5px 10px;
+        @include textStyle(lighten($black, 25%), $indie, 24px, 500, null, null, null, null, null);
+      }
+    }
+  }
+}

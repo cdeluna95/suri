@@ -10,7 +10,7 @@
 <meta name="description" content="@yield('meta-desc')">
 <meta name="keywords" content="@yield('meta-key')">
 <!-- Styles -->
-<link href="{{ asset('css/app.css') }}" rel="stylesheet">
+<link href="{{ mix('css/app.css') }}" rel="stylesheet">
 <!-- Scripts -->
 <script>window.Laravel = { csrfToken: '{{ csrf_token() }}' };</script>
 @endsection

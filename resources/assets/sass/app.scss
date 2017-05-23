@@ -12,6 +12,7 @@
 @import "pages/welcome";
 @import "pages/auth";
 @import "pages/dashboard";
+@import "pages/reminders";
 @import "pages/footer";
 
 /**
@@ -21,6 +22,10 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 :root {
