@@ -17,7 +17,7 @@
       margin: 0 5px 0 0;
     }
     
-    .btn-new {
+    .note-plus {
       margin: 0 0 0 5px;
     }
   }
@@ -27,24 +27,24 @@
     @include flexContLayout(flex, $direction: row, $wrap: wrap, $justify-content: center);
     
     .note {
+      background: lighten($yellow, 25%);
       box-shadow: 0 4px 8px rgba($black, 0.2);
+      position: relative;
       width: 200px;
       height: 200px;
       margin: 5px;
+      overflow: hidden;
       @extend %light-ease;
       
       &:nth-child(odd) {
-        background: lighten($blue, 30%);
         transform: rotate(3deg);
       }
       
       &:nth-child(even) {
-        background: lighten($yellow, 25%);
         transform: rotate(-3deg);
       }
       
       &:nth-child(3n) {
-        background: lighten($red, 30%);
         transform: rotate(0);
       }
       
@@ -56,9 +56,80 @@
         transform: scale(1.2);
       }
       
-      .note-text {
-        padding: 5px 10px;
-        @include textStyle(lighten($black, 25%), $indie, 24px, 500, null, null, null, null, null);
+      .note-wrapper {
+        
+        .note-p {
+          padding: 5px 10px;
+          @include textStyle(lighten($black, 25%), $indie, 24px, 500, null, null, null, null, null);
+        }
+        
+        .note-icons {
+          z-index: 1;
+          @include posLayout(absolute, $right: 5px, $bottom: 2.5px);
+          
+          .btn-edit,
+          .btn-delete {
+            @include btnStyle(none, 0, 0, none, 0 5px);
+          }
+          
+          .fa-pencil,
+          .fa-trash {
+            opacity: 0.5;
+            @extend %light-ease;
+            
+            &:hover {
+              opacity: 1;
+            }
+          }
+          
+          .fa-pencil {
+            
+            &:hover {
+              color: $green;
+            }
+          }
+          
+          
+          .fa-trash {
+            
+            &:hover {
+              color: $red;
+            }
+          }
+        }
+        
+        .note-small {
+          text-align: center;
+          padding: 5px 0;
+          opacity: 0.5;
+          @include textStyle(lighten($black, 25%), $pt, null, 500, null, null, null, null, null);
+          @include posLayout(absolute, $right: 0, $bottom: 0, $left: 0);
+        }
+        
+        .note-textarea {
+          display: block;
+          width: 100%;
+          resize: none;
+          @include textStyle(lighten($black, 25%), $indie, null, 500, null, null, null, null, null);
+        }
+        
+        .btn-save-wrapper {
+          text-align: center;
+          margin: 5px 0;
+          
+          .btn-save {
+            font-size: 18px;
+            @include btnStyle(none, 0, 0, none, 0 5px);
+          }
+          
+          .fa-floppy-o {
+            color: darken($blue, 25%);
+            
+            &:hover {
+              animation: jiggle 400ms ease;
+            }
+          }
+        }
       }
     }
   }

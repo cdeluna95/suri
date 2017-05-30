@@ -12,10 +12,11 @@
 @section('user')
 <div id="home">
 
-  <!-- Dashboard -->
+  <!------------------------
+    Dashboard
+    ------------------------->
   <div id="dashboard">
     <div class="dashboard-wrapper">
-      
       <div class="dashboard-list">
         <div class="dashboard-title-wrapper">
           <h2 class="dashboard-title">
@@ -40,14 +41,14 @@
             Quizzes
           </a>
         </div>
-      </div>
-      
-    </div>
-  </div>
+      </div><!-- dashboard-list -->
+    </div><!-- dashboard-wrapper -->
+  </div><!-- dashboard -->
   
-  <!-- Feed -->
+  <!------------------------
+    Feed
+    ------------------------->
   <div id="feed">
-    
     <!-- Dashboard burger -->
     <!--<div class="dashboard-burger-wrapper">-->
     <!--  <div class="dashboard-burger">-->
@@ -56,15 +57,12 @@
     <!--    <span class="dash-bar"></span>-->
     <!--  </div>-->
     <!--</div>-->
-    
     <!-- Bulletin -->
     <div class="reminders-wrapper">
-      <add></add>
-      
-      <reminders></reminders>
+      <add @note-created="pushNote"></add>
+      <reminders :notes="notes"></reminders>
     </div>
-    
-  </div>
+  </div><!-- feed -->
   
-</div>
+</div><!-- home -->
 @endsection

@@ -1620,7 +1620,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony default export */ __webpack_exports__["default"] = ({
+  methods: {
+    // Emit event listener note-created
+    createNote: function createNote() {
+      this.$emit('note-created', {
+        id: 1,
+        note: 'Enter note here...'
+      });
+    }
+  }
+});
 
 /***/ }),
 
@@ -1637,9 +1647,74 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['text']
+  // Call note property
+  props: ['note'],
+
+  data: function data() {
+    // Define editing mode as false
+    return {
+      isEditing: false
+    };
+  },
+
+
+  methods: {
+    // Enter editing mode
+    editNote: function editNote() {
+      this.isEditing = true;
+    },
+
+    // Emit event listener note-deleted
+    deleteNote: function deleteNote(note) {
+      this.$emit('note-deleted', note);
+    },
+
+    // Exit editing mode
+    saveNote: function saveNote() {
+      this.isEditing = false;
+    }
+  }
 });
 
 /***/ }),
@@ -1655,12 +1730,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      notes: [{ text: "Walk dogs" }, { text: "Do stuff" }, { text: "Finish homework" }, { text: "Do groceries" }, { text: "Go to gym" }, { text: "Sleep" }, { text: "Eat food" }, { text: "Listen to music" }]
-    };
+  // Call notes property
+  props: ['notes'],
+
+  methods: {
+    // Remove note from array
+    spliceNote: function spliceNote(note) {
+      var index = this.notes.indexOf(note);
+      this.notes.splice(index, 1);
+    }
   }
 });
 
@@ -31659,10 +31745,15 @@ module.exports = function normalizeComponent (
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "reminders"
-  }, _vm._l((_vm.notes), function(text) {
+  }, _vm._l((_vm.notes), function(note, index) {
     return _c('note', {
+      key: note.id,
       attrs: {
-        "text": text
+        "note": note,
+        "index": index
+      },
+      on: {
+        "note-deleted": _vm.spliceNote
       }
     })
   }))
@@ -31683,9 +31774,88 @@ if (false) {
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "note"
+  }, [_c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (!_vm.isEditing),
+      expression: "!isEditing"
+    }],
+    staticClass: "note-wrapper"
   }, [_c('p', {
-    staticClass: "note-text"
-  }, [_vm._v("\n    " + _vm._s(_vm.text.text) + "\n  ")])])
+    staticClass: "note-p"
+  }, [_vm._v("\n      " + _vm._s(_vm.note.note) + "\n    ")]), _vm._v(" "), _c('div', {
+    staticClass: "note-icons"
+  }, [_c('button', {
+    staticClass: "btn-edit",
+    on: {
+      "click": _vm.editNote
+    }
+  }, [_c('i', {
+    staticClass: "fa fa-pencil",
+    attrs: {
+      "aria-hidden": "true"
+    }
+  })]), _vm._v(" "), _c('button', {
+    staticClass: "btn-delete",
+    on: {
+      "click": function($event) {
+        _vm.deleteNote(_vm.note)
+      }
+    }
+  }, [_c('i', {
+    staticClass: "fa fa-trash",
+    attrs: {
+      "aria-hidden": "true"
+    }
+  })])]), _vm._v(" "), _c('small', {
+    staticClass: "note-small"
+  }, [_vm._v("\n      " + _vm._s(_vm.note.id) + "\n    ")])]), _vm._v(" "), _c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.isEditing),
+      expression: "isEditing"
+    }],
+    staticClass: "note-wrapper"
+  }, [_c('textarea', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.note.note),
+      expression: "note.note"
+    }],
+    staticClass: "note-textarea",
+    attrs: {
+      "rows": "8",
+      "cols": "25"
+    },
+    domProps: {
+      "value": (_vm.note.note)
+    },
+    on: {
+      "keydown": function($event) {
+        if (!('button' in $event) && _vm._k($event.keyCode, "enter", 13)) { return null; }
+        _vm.saveNote($event)
+      },
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.note.note = $event.target.value
+      }
+    }
+  }), _vm._v(" "), _c('div', {
+    staticClass: "btn-save-wrapper"
+  }, [_c('button', {
+    staticClass: "btn-save",
+    on: {
+      "click": _vm.saveNote
+    }
+  }, [_c('i', {
+    staticClass: "fa fa-floppy-o",
+    attrs: {
+      "aria-hidden": "true"
+    }
+  })])])])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -31701,21 +31871,22 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "reminders-add"
   }, [_c('button', {
-    staticClass: "btn-plus"
+    staticClass: "btn-plus",
+    on: {
+      "click": _vm.createNote
+    }
   }, [_c('i', {
     staticClass: "fa fa-plus",
     attrs: {
       "aria-hidden": "true"
     }
   }), _vm._v(" "), _c('span', {
-    staticClass: "btn-new"
+    staticClass: "note-plus"
   }, [_vm._v("Create new note")])])])
-}]}
+},staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
@@ -41448,7 +41619,20 @@ Vue.component('note', __webpack_require__("./resources/assets/js/components/Note
 Vue.component('add', __webpack_require__("./resources/assets/js/components/Add.vue"));
 
 var app = new Vue({
-  el: '#suri-app'
+  // Use #suri-app element
+  el: '#suri-app',
+
+  data: {
+    // Initialize notes array
+    notes: [{ id: 1, note: 'Enter note here...' }]
+  },
+
+  methods: {
+    // Push note to notes array
+    pushNote: function pushNote(note) {
+      this.notes.push(note);
+    }
+  }
 });
 
 /***/ }),

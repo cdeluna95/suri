@@ -21,5 +21,18 @@ Vue.component('note', require('./components/Note.vue'));
 Vue.component('add', require('./components/Add.vue'));
 
 const app = new Vue({
-    el: '#suri-app'
+    // Use #suri-app element
+    el: '#suri-app',
+    
+    data: {
+      // Initialize notes array
+      notes: [ { id: 1, note: 'Enter note here...'  } ]
+    },
+    
+    methods: {
+      // Push note to notes array
+      pushNote: function(note) {
+        this.notes.push(note);
+      }
+    }
 });
