@@ -26,7 +26,7 @@ const app = new Vue({
     
     data: {
       // Initialize notes array
-      notes: [ { id: 1, note: 'Enter note here...'  } ]
+      notes: []
     },
     
     methods: {

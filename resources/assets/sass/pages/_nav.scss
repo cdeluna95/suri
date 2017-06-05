@@ -6,13 +6,17 @@
   border: 0;
   margin: 0;
   padding: 15px 0;
+  @include deviceBreak('max-width: 767.5px') {
+    position: fixed;
+    width: 100%;
+  }
   
   .navbar-brand {
     @include textStyle(darken($white, 5%), $source, 2.5rem, null, null, null, null, 1px 1px 1px rgba($black, 0.1), null);
     
     &:hover,
     &:focus {
-      color: $white;
+      color: darken($white, 5%);
     }
   }
 }
@@ -81,23 +85,23 @@
         
         &:hover,
         &:focus {
-          color: $white;
+          color: darken($white, 5%);
         }
       }
       
       .nav-signup {
         text-align: center;
-        background: darken($orange, 2.5%);
+        background: $hotpink;
         width: 100px;
         @include deviceBreak("max-width: 767.5px") {
-          background: darken($orange, 2.5%);
+          background: $hotpink;
           width: 120px;
           margin: 0 auto;
         }
         
         &:hover,
         &:focus {
-          background: darken($orange, 2.5%);
+          background: $hotpink;
         }
       }
     }

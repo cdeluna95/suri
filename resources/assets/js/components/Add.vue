@@ -1,20 +1,26 @@
 <template>
-  <div class="reminders-add">
-    <button class="btn-plus" @click="createNote">
-      <i class="fa fa-plus" aria-hidden="true"></i>
-      <span class="note-plus">Create new note</span>
-    </button>
-  </div>
+  <button class="btn-plus" @click="createNote">
+    <i class="fa fa-plus" aria-hidden="true"></i>
+    <span class="note-plus">Create note</span>
+  </button><!-- btn-plus -->
 </template>
 
 <script>
   export default {
+    // Initialize noteText
+    data: function() {
+      // Set noteText to some text
+      return {
+        noteText: 'Enter note here...'
+      };
+    },
+    
     methods: {
       // Emit event listener note-created
       createNote: function() {
+        var text = this.noteText;
         this.$emit('note-created', {
-          id: 1,
-          note: 'Enter note here...'
+          note: text
         });
       }
     }

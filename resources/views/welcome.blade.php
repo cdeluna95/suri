@@ -5,12 +5,15 @@
 @section('title', 'Make learning easy | Suri')
 @section('meta-title', 'Make learning easy | Suri')
 @section('meta-desc', 'Take learning to the next level with Suri!')
-@section('meta-key', 'learning, easy, reminders, flashcards, quizzes, students, school, college, university')
+@section('meta-key', 'learning, easy, reminders, sticky notes, flashcards, quizzes, students, school, college, university')
 
 @extends('layouts.nav')
 
 @section('guest')
-<div id="welcome">
+<!------------------------
+    Welcome
+  ------------------------->
+<main id="welcome">
   <div class="welcome-wrapper">
     
     <!-- Title -->
@@ -23,7 +26,7 @@
     <!-- Subtitle -->
     <div class="suri-subtitle-wrapper">
       <h4 class="suri-subtitle">
-        <span class="suri-span">Suri</span> facilitates your learning needs by offering you custom bulletin boards, flashcards, quizzes, and more!
+        <span class="suri-span">Suri</span> facilitates your learning needs by offering you sticky notes, flashcards, quizzes, and more!
       </h4>
     </div>
     
@@ -34,8 +37,8 @@
       </a>
     </div>
     
-  </div>
-</div>
+  </div><!-- welcome-wrapper -->
+</main><!-- welcome -->
 @endsection
 
 @extends('layouts.footer')

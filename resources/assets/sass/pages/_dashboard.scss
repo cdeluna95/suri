@@ -1,160 +1,171 @@
 /** 
- * Home styles
- */
-#home {
-  padding: 0 0 0 250px;
+* Dashboard styles
+*/
+#dashboard {
+  z-index: 3;
+  overflow-y: auto;
   @extend %regular-ease;
+  @include bgProps(rgba($hotpink, 0.9), rgba($hotpink, 0.8), ("../images/ggc.jpg"), center, cover, no-repeat, null);
+  @include posLayout(fixed, $top: 0, $left: 0);
+  @include displayProps(block, $width: 250px, $height: 100%);
+  @include deviceBreak('max-width: 767.5px') {
+    top: 60px;
+  }
   
-  /**
-   * Dashboard styles
-   */
-  #dashboard {
-    background: darken($white, 2.5%);
-    box-shadow: inset 0 -2px 10px rgba($black, 0.2),
-                inset 0 -2px 20px rgba($black, 0.1);
-    width: 250px;
-    height: 100%;
-    margin: 0 0 0 -250px;
-    overflow-y: auto;
-    @extend %regular-ease;
-    @include posLayout(fixed, $left: 250px);
+  .dashboard-wrapper {
     
-    .dashboard-wrapper {
-      margin: 2em 0;
+    .dashboard-brand-wrapper {
+      text-align: center;
+      border-bottom: 1px dashed rgba($white, 0.4);
+      margin: 0 0 2em 0;
+      padding: 5px 0;
       
-      .dashboard-list {
-        text-align: center;
-        width: 250px;
-        margin: 1em 0;
-        @include posLayout(absolute, $top: 0);
+      .dashboard-brand {
+        @include textStyle(darken($white, 5%), $source, 2.5rem, null, null, null, null, 1px 1px 1px rgba($black, 0.1), null);
         
-        .dashboard-title-wrapper {
-          opacity: 0;
-          animation: fadeOut 500ms ease forwards;
-           @extend %light-ease;
-          @include flexContLayout(flex, $direction: column);
-          
-          .dashboard-title {
-            @include textStyle(lighten($black, 50%), $source, 2rem, null, null, null, null, 1 1px 1px rgba($black, 0.1), null);
-          }
+        &:hover,
+        &:focus {
+          text-decoration: none;
         }
+      }
+    }
+    
+    .dashboard-user-wrapper {
+      padding: 0 0 15px 20px;
+      opacity: 0;
+      animation: fadeOut 500ms ease forwards;
+      
+      .dashboard-user,
+      .dashboard-username {
+        display: inline;
+        @include textStyle(rgba($white, 0.95), $lato, 1.25rem, 900, null, null, null, null, null);
+      }
+      
+      .dashboard-online {
+        background: $green;
+        border-radius: 50%;
+        @include displayProps(inline-block, $width: 10px, $height: 10px, $margin: 0 0 0 5px);
+      }
+    }
+    
+    .dashboard-list-wrapper {
+      padding: 0 0 0 20px;
+      
+      .dashboard-ul {
+        @extend %ul-even;
         
-        .dashboard-list-wrapper {
+        .dashboard-li {
+          margin: 0;
+          opacity: 0;
           animation: slide 250ms ease forwards;
-          @extend .dashboard-title-wrapper;
-          
-          @for $i from 1 through 3 {
+      
+          @for $i from 1 through 6 {
             &:nth-child(#{$i}) {
+              transition: margin 250ms * $i ease;
               animation-duration: 250ms * $i;
             }
           }
           
           .dashboard-a {
-            flex: 1;
+            display: block;
             padding: 15px 0;
-            @extend %light-ease;
-            @include textStyle(lighten($black, 50%), $lato, 1.25rem, null, null, null, null, 1 1px 1px rgba($black, 0.1), null);
+            @include textStyle(rgba($white, 0.95), $lato, 1rem, 900, null, null, null, null, null);
             
             &:hover,
             &:focus {
               text-decoration: none;
+              
+              .dashboard-span {
+                color: lighten($gold, 5%);
+                
+                &:before {
+                  transform: scaleX(1.0);
+                }
+              }
+              
+              .fa {
+                color: lighten($gold, 5%);
+              }
             }
             
-            .fa {
-              color: $hotpink;
-              margin: 0 0.5em;
-              @extend %light-ease;
+            &:active {
+              
+              .dashboard-span {
+                
+                &:before {
+                  transform: scaleX(0.8);
+                }
+              }
+            }
+            
+            .dashboard-span {
+              position: relative;
+              @extend %regular-ease;
+              
+              &:before {
+                content: "";
+                background: lighten($gold, 5%);
+                width: 100%;
+                height: 4px;
+                transform: scale(0);
+                @extend %regular-ease;
+                @include posLayout(absolute, $bottom: -10px);
+              }
             }
           }
           
-          &:hover,
-          &:focus {
-            background: $hotpink;
+          .active {
             
-            .dashboard-a,
+            .dashboard-span {
+              color: lighten($gold, 5%);;
+              
+              &:before {
+                transform: scaleX(1.0);
+              }
+            }
+            
             .fa {
-              color: darken($white, 5%);
+              color: lighten($gold, 5%);;
             }
           }
+        }
+        
+        .dashboard-li.accelerate {
+          margin: 0 0 0 -230px;
         }
       }
     }
-  }
-  
-  /**
-   * Feed styles
-   */
-  #feed {
-    width: 100%;
-    position: relative;
-    padding: 20px;
     
-    .dashboard-burger-wrapper {
-      
-      .dashboard-burger {
-        display: inline-block;
-        cursor: pointer;
-        @extend %regular-ease;
-        
-        .dash-bar {
-          background: $hotpink;
-          display: block;
-          margin: 7px 0;
-          width: 30px;
-          height: 3px;
-          transform-origin: 3% 50%;
-          @extend %regular-ease;
-          
-          &:nth-child(1) {
-            transform: rotate(45deg);
-          }
-          
-          &:nth-child(2) {
-            width: 0;
-            opacity: 0;
-          }
-          
-          &:nth-child(3) {
-            transform: rotate(-45deg);
-          }
-        }
-      }
-      
-      .dashboard-burger.shift {
-        
-        .dash-bar {
-          transform-origin: 0%;
-          
-          &:nth-child(1) {
-            transform: rotate(0);
-          }
-          
-          &:nth-child(2) {
-            width: 30px;
-            opacity: 1;
-          }
-          
-          &:nth-child(3) {
-            transform: rotate(0);
-          }
-        }
-      }
+    .fa {
+      @extend %regular-ease;
+      @include textStyle(rgba($white, 0.75), null, 1.75rem, null, null, null, null, null, null);
+      @include displayProps(null, $width: 25px, $height: 25px, $margin: 0 20px 0 0);
     }
   }
 }
 
 /**
- * Toggled styles
+ * Home styles
  */
+#home {
+  padding: 0 0 0 250px;
+  @extend %regular-ease;
+  @include deviceBreak('max-width: 767.5px') {
+    padding: 0;
+  }
+}
+
+/**
+* Toggled styles
+*/
 #home.toggled {
   padding: 0;
   
   #dashboard {
-    width: 0;
+    left: -250px;
   }
   
   #feed {
-    position: absolute;
-    margin: 0 -250px 0 0;
+    opacity: 1;
   }
 }

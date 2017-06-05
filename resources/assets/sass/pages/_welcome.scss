@@ -10,6 +10,7 @@
     margin: 0 auto;
     @include posLayout(absolute, $top: 32.5%, $right: 0, $left: 0);
     @include deviceBreak("max-width: 767.5px") {
+      top: 25%;
       max-width: 80%;
     }
     

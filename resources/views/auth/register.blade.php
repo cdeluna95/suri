@@ -5,20 +5,25 @@
 @section('title', 'Sign up | Suri')
 @section('meta-title', 'Sign up | Suri')
 @section('meta-desc', 'Sign up and take learning to the next level with Suri!')
-@section('meta-key', 'learning, easy, reminders, flashcards, quizzes, students, school, college, university')
+@section('meta-key', 'learning, easy, reminders, sticky notes, flashcards, quizzes, students, school, college, university')
 
 @extends('layouts.nav')
 
 @section('guest')
-<div id="auth">
+<!------------------------
+    Auth
+  ------------------------->
+<section id="auth">
   <div class="auth-wrapper">
     
+    <!-- Title -->
     <div class="auth-title-wrapper">
       <h2 class="auth-title auth-signup">
         Sign up
       </h2>
     </div>
     
+    <!-- Form -->
     <div class="auth-form-wrapper">
       <form role="form" method="POST" action="{{ route('register') }}">
         {{ csrf_field() }}
@@ -74,8 +79,8 @@
       </form>
     </div>
     
-  </div>
-</div>
+  </div><!-- auth-wrapper -->
+</section><!-- auth -->
 @endsection
 
 @extends('layouts.footer')

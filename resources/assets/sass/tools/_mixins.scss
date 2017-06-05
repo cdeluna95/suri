@@ -65,6 +65,21 @@
 }
 
 /**
+ * Define size and border properties
+ */
+@mixin displayProps($display, $width: null, $min-width: null, $max-width: null, $height: null, $min-height: null, $max-height: null, $margin: null, $padding: null) {
+  display: $display;
+  width: $width;
+  min-width: $min-width;
+  max-width: $max-width;
+  height: $height;
+  min-height: $min-height;
+  max-height: $max-height;
+  margin: $margin;
+  padding: $padding;
+}
+
+/**
  * Define flexbox container properties
  */
 @mixin flexContLayout($display, $direction: null, $wrap: null, $justify-content: null, $align-items: null, $align-content: null) {

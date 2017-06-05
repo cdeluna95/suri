@@ -5,20 +5,25 @@
 @section('title', 'Reset password | Suri')
 @section('meta-title', 'Reset password | Suri')
 @section('meta-desc', 'Reset your password and take learning to the next level with Suri!')
-@section('meta-key', 'learning, easy, reminders, flashcards, quizzes, students, school, college, university')
+@section('meta-key', 'learning, easy, reminders, sticky notes, flashcards, quizzes, students, school, college, university')
 
 @extends('layouts.nav')
 
 @section('guest')
-<div id="auth">
+<!------------------------
+    Auth
+  ------------------------->
+<section id="auth">
   <div class="auth-wrapper">
     
+    <!-- Title -->
     <div class="auth-title-wrapper">
       <h2 class="auth-title auth-reset">
         Reset password
       </h2>
     </div>
     
+    <!-- Form -->
     <div class="auth-form-wrapper">
       @if (session('status'))
         <div class="auth-success">
@@ -50,8 +55,8 @@
       </form>
     </div>
     
-  </div>
-</div>
+  </div><!-- auth-wrapper -->
+</section><!-- auth -->
 @endsection
 
 @extends('layouts.footer')

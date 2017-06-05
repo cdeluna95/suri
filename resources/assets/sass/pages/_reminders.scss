@@ -1,132 +1,173 @@
 /**
- * User feed styles
+ * Feed styles
  */
-.reminders-wrapper {
-  
-  .reminders-add {
-    text-align: center;
-    margin: 2em 0;
-    
-    .btn-plus {
-      display: inline-block;
-      @include btnStyle($hotpink, 0, 0, none, 15px 25px);
-      @include textStyle(darken($white, 5%), $lato, 16px, 900, null, null, null, null, null);
-    }
-    
-    .fa {
-      margin: 0 5px 0 0;
-    }
-    
-    .note-plus {
-      margin: 0 0 0 5px;
-    }
+#feed {
+  width: 100%;
+  padding: 20px;
+  @include deviceBreak('max-width: 767.5px') {
+    opacity: 0.5;
+    @include transProps(300ms ease-in-out);
   }
   
-  .reminders {
-    margin: 4em 0;
-    @include flexContLayout(flex, $direction: row, $wrap: wrap, $justify-content: center);
+  .reminders-wrapper {
+    margin: 6em 0 4em 0;
     
-    .note {
-      background: lighten($yellow, 25%);
-      box-shadow: 0 4px 8px rgba($black, 0.2);
-      position: relative;
-      width: 200px;
-      height: 200px;
-      margin: 5px;
-      overflow: hidden;
-      @extend %light-ease;
+    .reminders {
+      @include flexContLayout(flex, $direction: row, $wrap: wrap, $justify-content: center);
       
-      &:nth-child(odd) {
-        transform: rotate(3deg);
-      }
-      
-      &:nth-child(even) {
-        transform: rotate(-3deg);
-      }
-      
-      &:nth-child(3n) {
-        transform: rotate(0);
-      }
-      
-      &:hover,
-      &:focus {
-        box-shadow: 0 4px 8px rgba($black, 0.2),
-                    0 16px 64px rgba($black, 0.1);
-        z-index: 1;
-        transform: scale(1.2);
-      }
-      
-      .note-wrapper {
+      .reminders-empty {
+        text-align: center;
         
-        .note-p {
-          padding: 5px 10px;
-          @include textStyle(lighten($black, 25%), $indie, 24px, 500, null, null, null, null, null);
+        .reminders-empty-h2,
+        .reminders-empty-p {
+          opacity: 0;
+          animation: fadeOut 1000ms ease forwards;
+          @include textStyle(lighten($black, 25%), $lato, null, 500, null, null, null, null, -0.5px);
         }
         
-        .note-icons {
+        .reminders-empty-h2 {
+          animation-delay: 0ms;
+        }
+        
+        .reminders-empty-p {
+          animation-delay: 200ms;
+        }
+        
+        .reminders-add {
+          margin: 20px 0;
+          opacity: 0;
+          animation: zoom 1000ms ease 400ms forwards;
+          
+          .btn-plus {
+            display: inline-block;
+            @include btnStyle($hotpink, 0, 0, none, 10px 20px 11px);
+            @include textStyle(darken($white, 5%), $lato, 16px, 900, null, null, null, null, null);
+          }
+          
+          .fa {
+            margin: 0 5px 0 0;
+          }
+          
+          .note-plus {
+            margin: 0 0 0 5px;
+          }
+        }
+        
+        .reminders-img-wrapper {
+          margin: 40px 0;
+          opacity: 0;
+          animation: zoom 1000ms ease 600ms forwards;
+        }
+      }
+      
+      .note {
+        background: lighten($yellow, 25%);
+        box-shadow: 0 4px 8px rgba($black, 0.2);
+        position: relative;
+        overflow: hidden;
+        @extend %light-ease;
+        @include displayProps(block, $width: 200px, $height: 200px, $margin: 5px);
+        
+        &:nth-child(odd) {
+          transform: rotate(3deg);
+        }
+        
+        &:nth-child(even) {
+          transform: rotate(-3deg);
+        }
+        
+        &:nth-child(3n) {
+          transform: rotate(0);
+        }
+        
+        &:hover,
+        &:focus {
+          box-shadow: 0 4px 8px rgba($black, 0.2),
+                      0 16px 64px rgba($black, 0.1);
           z-index: 1;
-          @include posLayout(absolute, $right: 5px, $bottom: 2.5px);
+          transform: scale(1.2);
+        }
+        
+        .note-wrapper {
           
-          .btn-edit,
-          .btn-delete {
-            @include btnStyle(none, 0, 0, none, 0 5px);
+          .note-p {
+            padding: 5px 10px;
+            @include textStyle(lighten($black, 25%), $indie, 24px, 500, null, null, null, null, null);
           }
           
-          .fa-pencil,
-          .fa-trash {
-            opacity: 0.5;
-            @extend %light-ease;
+          .note-icons {
+            z-index: 1;
+            @include posLayout(absolute, $right: 5px, $bottom: 2.5px);
             
-            &:hover {
-              opacity: 1;
+            .btn-edit,
+            .btn-delete {
+              @include btnStyle(none, 0, 0, none, 0 5px);
+            }
+            
+            .fa-pencil,
+            .fa-trash {
+              opacity: 0.5;
+              @extend %light-ease;
+              
+              &:hover {
+                opacity: 1;
+              }
+            }
+            
+            .fa-pencil {
+              
+              &:hover {
+                color: $green;
+              }
+            }
+            
+            
+            .fa-trash {
+              
+              &:hover {
+                color: $red;
+              }
             }
           }
           
-          .fa-pencil {
+          .note-textarea {
+            resize: none;
+            @include textStyle(lighten($black, 25%), $indie, 24px, 500, null, null, null, null, null);
+            @include btnStyle(rgba($black, 0), 0, 0, none, 4.5px 10px);
+            @include displayProps(block, $width: 100%, $height: 165px);
+          }
+          
+          .btn-save-wrapper {
+            z-index: 1;
+            @include posLayout(absolute, $right: 5px, $bottom: 2.5px);
             
-            &:hover {
-              color: $green;
+            .btn-save,
+            .btn-delete {
+              @include btnStyle(none, 0, 0, none, 0 5px);
             }
-          }
-          
-          
-          .fa-trash {
             
-            &:hover {
-              color: $red;
+            .fa-floppy-o,
+            .fa-trash {
+              opacity: 0.5;
+              @extend %light-ease;
+              
+              &:hover {
+                opacity: 1;
+              }
             }
-          }
-        }
-        
-        .note-small {
-          text-align: center;
-          padding: 5px 0;
-          opacity: 0.5;
-          @include textStyle(lighten($black, 25%), $pt, null, 500, null, null, null, null, null);
-          @include posLayout(absolute, $right: 0, $bottom: 0, $left: 0);
-        }
-        
-        .note-textarea {
-          display: block;
-          width: 100%;
-          resize: none;
-          @include textStyle(lighten($black, 25%), $indie, null, 500, null, null, null, null, null);
-        }
-        
-        .btn-save-wrapper {
-          text-align: center;
-          margin: 5px 0;
-          
-          .btn-save {
-            font-size: 18px;
-            @include btnStyle(none, 0, 0, none, 0 5px);
-          }
-          
-          .fa-floppy-o {
-            color: darken($blue, 25%);
             
-            &:hover {
-              animation: jiggle 400ms ease;
+            .fa-floppy-o {
+              
+              &:hover {
+                color: darken($blue, 25%);
+              }
+            }
+            
+            .fa-trash {
+              
+              &:hover {
+                color: $red;
+              }
             }
           }
         }

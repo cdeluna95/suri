@@ -1617,16 +1617,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  // Initialize noteText
+  data: function data() {
+    // Set noteText to some text
+    return {
+      noteText: 'Enter note here...'
+    };
+  },
+
   methods: {
     // Emit event listener note-created
     createNote: function createNote() {
+      var text = this.noteText;
       this.$emit('note-created', {
-        id: 1,
-        note: 'Enter note here...'
+        note: text
       });
     }
   }
@@ -1692,12 +1698,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   props: ['note'],
 
   data: function data() {
-    // Define editing mode as false
+    // Initialize editing mode as false
     return {
       isEditing: false
     };
   },
-
 
   methods: {
     // Enter editing mode
@@ -1705,14 +1710,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.isEditing = true;
     },
 
-    // Emit event listener note-deleted
-    deleteNote: function deleteNote(note) {
-      this.$emit('note-deleted', note);
-    },
-
     // Exit editing mode
     saveNote: function saveNote() {
       this.isEditing = false;
+    },
+
+    // Emit event listener note-deleted
+    deleteNote: function deleteNote(note) {
+      this.$emit('note-deleted', note);
     }
   }
 });
@@ -1736,12 +1741,40 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   // Call notes property
   props: ['notes'],
 
   methods: {
+    // Push note to notes array
+    pushNote: function pushNote(note) {
+      this.notes.push(note);
+    },
+
     // Remove note from array
     spliceNote: function spliceNote(note) {
       var index = this.notes.indexOf(note);
@@ -31745,7 +31778,25 @@ module.exports = function normalizeComponent (
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "reminders"
-  }, _vm._l((_vm.notes), function(note, index) {
+  }, [_c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.notes.length === 0),
+      expression: "notes.length === 0"
+    }],
+    staticClass: "reminders-empty"
+  }, [_c('h2', {
+    staticClass: "reminders-empty-h2"
+  }, [_vm._v("\n      You're all good!\n    ")]), _vm._v(" "), _c('p', {
+    staticClass: "reminders-empty-p"
+  }, [_vm._v("\n      Have any assignment? Add a note!\n    ")]), _vm._v(" "), _c('div', {
+    staticClass: "reminders-add"
+  }, [_c('add', {
+    on: {
+      "note-created": _vm.pushNote
+    }
+  })], 1), _vm._v(" "), _vm._m(0)]), _vm._v(" "), _vm._l((_vm.notes), function(note, index) {
     return _c('note', {
       key: note.id,
       attrs: {
@@ -31756,8 +31807,17 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "note-deleted": _vm.spliceNote
       }
     })
-  }))
-},staticRenderFns: []}
+  })], 2)
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "reminders-img-wrapper"
+  }, [_c('img', {
+    staticClass: "reminders-img img-auto",
+    attrs: {
+      "src": "images/sticky.png"
+    }
+  })])
+}]}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
@@ -31808,9 +31868,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "aria-hidden": "true"
     }
-  })])]), _vm._v(" "), _c('small', {
-    staticClass: "note-small"
-  }, [_vm._v("\n      " + _vm._s(_vm.note.id) + "\n    ")])]), _vm._v(" "), _c('div', {
+  })])])]), _vm._v(" "), _c('div', {
     directives: [{
       name: "show",
       rawName: "v-show",
@@ -31828,16 +31886,21 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "note-textarea",
     attrs: {
       "rows": "8",
-      "cols": "25"
+      "cols": "25",
+      "placeholder": "Enter note here..."
     },
     domProps: {
       "value": (_vm.note.note)
     },
     on: {
-      "keydown": function($event) {
+      "keydown": [function($event) {
         if (!('button' in $event) && _vm._k($event.keyCode, "enter", 13)) { return null; }
         _vm.saveNote($event)
-      },
+      }, function($event) {
+        if (!('button' in $event) && _vm._k($event.keyCode, "esc", 27)) { return null; }
+        _vm.saveNote($event)
+      }],
+      "blur": _vm.saveNote,
       "input": function($event) {
         if ($event.target.composing) { return; }
         _vm.note.note = $event.target.value
@@ -31852,6 +31915,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('i', {
     staticClass: "fa fa-floppy-o",
+    attrs: {
+      "aria-hidden": "true"
+    }
+  })]), _vm._v(" "), _c('button', {
+    staticClass: "btn-delete",
+    on: {
+      "click": function($event) {
+        _vm.deleteNote(_vm.note)
+      }
+    }
+  }, [_c('i', {
+    staticClass: "fa fa-trash",
     attrs: {
       "aria-hidden": "true"
     }
@@ -31871,9 +31946,7 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "reminders-add"
-  }, [_c('button', {
+  return _c('button', {
     staticClass: "btn-plus",
     on: {
       "click": _vm.createNote
@@ -31885,7 +31958,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }), _vm._v(" "), _c('span', {
     staticClass: "note-plus"
-  }, [_vm._v("Create new note")])])])
+  }, [_vm._v("Create note")])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -41624,7 +41697,7 @@ var app = new Vue({
 
   data: {
     // Initialize notes array
-    notes: [{ id: 1, note: 'Enter note here...' }]
+    notes: []
   },
 
   methods: {
@@ -41795,14 +41868,32 @@ module.exports = Component.exports
 /**
  * Alternatively, do some jQuery if necessary.
  */
+
+/**
+ * Toggle dashboard nav-burger upon click
+ */
 $(function () {
-  var burger = $(".dashboard-burger"),
+  var header = $(".header-burger-wrapper"),
+      title = $(".header-title-wrapper"),
+      burger = $(".header-burger"),
+      li = $(".dashboard-li"),
       home = $("#home");
 
   burger.on('click', function (e) {
     e.preventDefault();
-    burger.toggleClass("shift");
+    header.toggleClass("slide");
+    title.toggleClass("slide");
+    li.toggleClass("accelerate");
     home.toggleClass("toggled");
+  });
+});
+
+/**
+ * Focus on textarea upon click on div
+ */
+$(function () {
+  $('div').on('click', function () {
+    $(this).find('textarea').focus();
   });
 });
 

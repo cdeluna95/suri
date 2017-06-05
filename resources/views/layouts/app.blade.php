@@ -10,15 +10,21 @@
     
     @yield('guest')
     
-    <div id="suri-app">
+    <!------------------------
+      Suri App
+    ------------------------->
+    <section id="suri-app">
+      
+      @yield('header')
       
       @yield('user')
         
-    </div>
+    </section><!-- suri-app -->
     
     @yield('footer')
     
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}"></script>
+    
   </body>
 </html>

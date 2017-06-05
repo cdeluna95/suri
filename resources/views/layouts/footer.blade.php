@@ -1,7 +1,11 @@
 @section('footer')
-<div id="footer">
+<!------------------------
+    Footer
+  ------------------------->
+<footer id="footer">
   <div class="footer-wrapper">
     
+    <!-- Links -->
     <div class="footer-top">
       <ul class="footer-ul">
         <li class="footer-li">
@@ -13,12 +17,13 @@
       </ul>
     </div>
     
+    <!-- Copyright -->
     <div class="footer-bottom">
       <small class="footer-small">
         Copyright &copy; 2017 Suri.
       </small>
     </div>
     
-  </div>
-</div>
+  </div><!-- footer-wrapper -->
+</footer><!-- footer -->
 @endsection
