@@ -38,7 +38,7 @@
       
       .suri-subtitle {
         display: inline;
-        @include textStyle(darken($white, 5%), $lato, 1.5rem, 500, null, null, null, 1px 1px 5px rgba($black, 0.2), null);
+        @include textStyle(darken($white, 5%), $lato, 1.5rem, normal, null, null, null, 1px 1px 5px rgba($black, 0.2), null);
         @include deviceBreak("max-width: 767.5px") {
           font-size: calc(1.5rem / 1.05);
         }

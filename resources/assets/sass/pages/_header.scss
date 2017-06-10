@@ -51,7 +51,7 @@
       
       .header-title {
         display: inline;
-        @include textStyle(lighten($black, 35%), $lato, 1.75rem, 500, null, null, null, null, -1px);
+        @include textStyle(lighten($black, 35%), $lato, 1.75rem, normal, null, null, null, null, -1px);
       }
     }
     

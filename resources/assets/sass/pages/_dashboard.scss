@@ -10,6 +10,7 @@
   @include displayProps(block, $width: 250px, $height: 100%);
   @include deviceBreak('max-width: 767.5px') {
     top: 60px;
+    z-index: 1;
   }
   
   .dashboard-wrapper {
@@ -21,7 +22,7 @@
       padding: 5px 0;
       
       .dashboard-brand {
-        @include textStyle(darken($white, 5%), $source, 2.5rem, null, null, null, null, 1px 1px 1px rgba($black, 0.1), null);
+        @include textStyle(darken($white, 5%), $source, 2.5rem, normal, null, null, null, 1px 1px 1px rgba($black, 0.1), null);
         
         &:hover,
         &:focus {
@@ -31,11 +32,16 @@
     }
     
     .dashboard-user-wrapper {
-      padding: 0 0 15px 20px;
+      position: relative;
+      padding: 0 0 15px 65px;
       opacity: 0;
       animation: fadeOut 500ms ease forwards;
       
-      .dashboard-user,
+      .dashboard-image {
+        @include displayProps(null, $width: 35px, $height: 35px);
+        @include posLayout(absolute, $top: -7.5px, $left: 15px);
+      }
+      
       .dashboard-username {
         display: inline;
         @include textStyle(rgba($white, 0.95), $lato, 1.25rem, 900, null, null, null, null, null);
@@ -44,7 +50,7 @@
       .dashboard-online {
         background: $green;
         border-radius: 50%;
-        @include displayProps(inline-block, $width: 10px, $height: 10px, $margin: 0 0 0 5px);
+        @include displayProps(inline-block, $width: 10px, $height: 10px, $margin: 0 0 0 10px);
       }
     }
     
@@ -59,7 +65,7 @@
           opacity: 0;
           animation: slide 250ms ease forwards;
       
-          @for $i from 1 through 6 {
+          @for $i from 1 through 7 {
             &:nth-child(#{$i}) {
               transition: margin 250ms * $i ease;
               animation-duration: 250ms * $i;
@@ -106,7 +112,7 @@
                 content: "";
                 background: lighten($gold, 5%);
                 width: 100%;
-                height: 4px;
+                height: 3px;
                 transform: scale(0);
                 @extend %regular-ease;
                 @include posLayout(absolute, $bottom: -10px);
@@ -138,7 +144,7 @@
     
     .fa {
       @extend %regular-ease;
-      @include textStyle(rgba($white, 0.75), null, 1.75rem, null, null, null, null, null, null);
+      @include textStyle(rgba($white, 0.75), null, 1.75rem, normal, null, null, null, null, null);
       @include displayProps(null, $width: 25px, $height: 25px, $margin: 0 20px 0 0);
     }
   }

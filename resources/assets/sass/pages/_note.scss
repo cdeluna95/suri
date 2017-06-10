@@ -1,0 +1,116 @@
+/**
+ * Note styles
+ */
+.note {
+  background: lighten($yellow, 25%);
+  box-shadow: 0 4px 8px rgba($black, 0.2);
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  @extend %light-ease;
+  @include displayProps(block, $width: 200px, $height: 200px, $margin: 5px);
+  
+  &:nth-child(odd) {
+    transform: rotate(3deg);
+  }
+  
+  &:nth-child(even) {
+    transform: rotate(-3deg);
+  }
+  
+  &:nth-child(3n) {
+    transform: rotate(0);
+  }
+  
+  &:hover,
+  &:focus {
+    box-shadow: 0 4px 8px rgba($black, 0.2),
+                0 16px 64px rgba($black, 0.1);
+    z-index: 1;
+    transform: scale(1.2);
+  }
+  
+  .note-wrapper {
+    
+    .note-p {
+      padding: 5px 10px;
+      @include textStyle(lighten($black, 25%), $indie, 24px, normal, null, null, null, null, null);
+    }
+    
+    .note-icons {
+      z-index: 1;
+      @include posLayout(absolute, $right: 5px, $bottom: 2.5px);
+      
+      .btn-edit,
+      .btn-delete {
+        @include btnStyle(none, 0, 0, none, 0 5px);
+      }
+      
+      .fa-pencil,
+      .fa-trash {
+        opacity: 0.5;
+        @extend %light-ease;
+        
+        &:hover {
+          opacity: 1;
+        }
+      }
+      
+      .fa-pencil {
+        
+        &:hover {
+          color: $green;
+        }
+      }
+      
+      
+      .fa-trash {
+        
+        &:hover {
+          color: $red;
+        }
+      }
+    }
+    
+    .note-textarea {
+      resize: none;
+      @include textStyle(lighten($black, 25%), $indie, 24px, normal, null, null, null, null, null);
+      @include btnStyle(rgba($black, 0), 0, 0, none, 4.5px 10px);
+      @include displayProps(block, $width: 100%, $height: 165px);
+    }
+    
+    .btn-save-wrapper {
+      z-index: 1;
+      @include posLayout(absolute, $right: 5px, $bottom: 2.5px);
+      
+      .btn-save,
+      .btn-delete {
+        @include btnStyle(none, 0, 0, none, 0 5px);
+      }
+      
+      .fa-floppy-o,
+      .fa-trash {
+        opacity: 0.5;
+        @extend %light-ease;
+        
+        &:hover {
+          opacity: 1;
+        }
+      }
+      
+      .fa-floppy-o {
+        
+        &:hover {
+          color: darken($blue, 25%);
+        }
+      }
+      
+      .fa-trash {
+        
+        &:hover {
+          color: $red;
+        }
+      }
+    }
+  }
+}

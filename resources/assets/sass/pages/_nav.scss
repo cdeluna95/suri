@@ -12,7 +12,7 @@
   }
   
   .navbar-brand {
-    @include textStyle(darken($white, 5%), $source, 2.5rem, null, null, null, null, 1px 1px 1px rgba($black, 0.1), null);
+    @include textStyle(darken($white, 5%), $source, 2.5rem, normal, null, null, null, 1px 1px 1px rgba($black, 0.1), null);
     
     &:hover,
     &:focus {
@@ -104,9 +104,28 @@
           background: $hotpink;
         }
       }
+      
+      .nav-about,
+      .nav-help {
+        @include deviceBreak("min-width: 767.5px") {
+          display: none;
+        }
+      }
     }
     
     .dropdown {
+      
+      .dropdown-toggle {
+        position: relative;
+        
+        .dropdown-image {
+          @include displayProps(null, $width: 30px, $height: 30px);
+          @include posLayout(absolute, $top: 10px, $left: -25px);
+          @include deviceBreak('max-width: 767.5px') {
+            display: none;
+          }
+        }
+      }
       
       .dropdown-menu {
         border: 0;

@@ -1,5 +1,5 @@
 <template>
-  <div class="note">
+  <div class="note" @dblclick="editNote">
     
     <!------------------------
       Show in non-editing mode
@@ -30,7 +30,8 @@
         v-model="note.note"
         @keydown.enter="saveNote"
         @keydown.esc="saveNote"
-        @blur="saveNote">
+        @blur="saveNote"
+        autofocus>
       </textarea><!-- note-textarea -->
       <div class="btn-save-wrapper">
         <button class="btn-save" @click="saveNote">
@@ -47,6 +48,7 @@
 
 <script>
   export default {
+    
     // Call note property
     props: ['note'],
     
@@ -73,5 +75,6 @@
         this.$emit('note-deleted', note);
       }
     }
+    
   };
 </script>

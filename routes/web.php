@@ -11,10 +11,16 @@
 |
 */
 
+// Routes to welcome page as guest
 Route::get('/', function () {
     return view('welcome');
 });
 
+// Routes to home page as user
 Route::get('/home', 'HomeController@index')->name('home');
+
+// Routes to settings as user
+Route::get('settings', 'UserController@settings')->middleware('auth');
+Route::post('settings', 'UserController@update_avatar');
 
 Auth::routes();

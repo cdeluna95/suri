@@ -21,21 +21,21 @@
       <h1 class="suri-title">
         Make learning <span class="suri-span">easy</span>.
       </h1>
-    </div>
+    </div><!-- suri-title-wrapper -->
     
     <!-- Subtitle -->
     <div class="suri-subtitle-wrapper">
       <h4 class="suri-subtitle">
         <span class="suri-span">Suri</span> facilitates your learning needs by offering you sticky notes, flashcards, quizzes, and more!
       </h4>
-    </div>
+    </div><!-- suri-subtitle-wrapper -->
     
     <!-- Get started -->
     <div class="suri-started-wrapper">
       <a class="suri-started" href="{{ route('register') }}">
         Get started
       </a>
-    </div>
+    </div><!-- suri-started-wrapper -->
     
   </div><!-- welcome-wrapper -->
 </main><!-- welcome -->

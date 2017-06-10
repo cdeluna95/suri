@@ -7,7 +7,7 @@
 
 <script>
   export default {
-    // Initialize noteText
+    
     data: function() {
       // Set noteText to some text
       return {
@@ -24,5 +24,6 @@
         });
       }
     }
+    
   };
 </script>

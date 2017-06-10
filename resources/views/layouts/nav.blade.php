@@ -72,6 +72,7 @@
             
             <!-- Dropdown toggle -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+              <img class="dropdown-image img-circle" src="./images/uploads/{{ Auth::user()->avatar }}">
               {{ Auth::user()->name }}
               <span class="caret"></span>
             </a>
@@ -91,6 +92,11 @@
               <li>
                 <a href="#">
                   Quizzes
+                </a>
+              </li>
+              <li>
+                <a href="{{ url('/settings') }}">
+                  User Settings
                 </a>
               </li>
               <li>

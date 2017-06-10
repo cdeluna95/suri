@@ -1619,7 +1619,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  // Initialize noteText
+
   data: function data() {
     // Set noteText to some text
     return {
@@ -1636,6 +1636,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       });
     }
   }
+
 });
 
 /***/ }),
@@ -1692,8 +1693,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+
   // Call note property
   props: ['note'],
 
@@ -1720,6 +1723,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.$emit('note-deleted', note);
     }
   }
+
 });
 
 /***/ }),
@@ -1766,6 +1770,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+
   // Call notes property
   props: ['notes'],
 
@@ -1781,6 +1786,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.notes.splice(index, 1);
     }
   }
+
 });
 
 /***/ }),
@@ -31833,7 +31839,10 @@ if (false) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "note"
+    staticClass: "note",
+    on: {
+      "dblclick": _vm.editNote
+    }
   }, [_c('div', {
     directives: [{
       name: "show",
@@ -31887,7 +31896,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "rows": "8",
       "cols": "25",
-      "placeholder": "Enter note here..."
+      "placeholder": "Enter note here...",
+      "autofocus": ""
     },
     domProps: {
       "value": (_vm.note.note)
@@ -41677,7 +41687,7 @@ module.exports = function(module) {
  */
 
 __webpack_require__("./resources/assets/js/bootstrap.js");
-__webpack_require__("./resources/assets/js/jquery.js");
+__webpack_require__("./resources/assets/js/functions.js");
 
 window.Vue = __webpack_require__("./node_modules/vue/dist/vue.common.js");
 
@@ -41861,13 +41871,31 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ "./resources/assets/js/jquery.js":
+/***/ "./resources/assets/js/functions.js":
 /***/ (function(module, exports) {
 
 
 /**
- * Alternatively, do some jQuery if necessary.
+ * Alternatively, do some quick vanilla JavaScript or jQuery if necessary.
  */
+
+/**
+ * Find file input, and count and display uploads
+ */
+var inputs = document.querySelectorAll('.file');
+
+Array.prototype.forEach.call(inputs, function (input) {
+  var label = input.nextElementSibling,
+      labelVal = label.innerHTML;
+
+  input.addEventListener('change', function (e) {
+    var fileName = '';
+
+    if (this.files && this.files.length > 1) fileName = (this.getAttribute('data-multiple-caption') || '').replace('{count}', this.files.length);else fileName = e.target.value.split('\\').pop();
+
+    if (fileName) label.querySelector('.file-caption').innerHTML = fileName;else label.innerHTML = labelVal;
+  });
+});
 
 /**
  * Toggle dashboard nav-burger upon click
@@ -41894,6 +41922,17 @@ $(function () {
 $(function () {
   $('div').on('click', function () {
     $(this).find('textarea').focus();
+  });
+});
+
+/**
+ * Fade in the note upon click
+ */
+$(function () {
+  $('.btn-plus').on('click', function () {
+    $('.note').animate({
+      opacity: '1.0'
+    }, 300);
   });
 });
 

@@ -15,7 +15,7 @@
         
         .footer-li {
           display: inline-block;
-          @include textStyle(lighten($black, 50%), $lato, 1.25rem, null, null, null, null, null, null);
+          @include textStyle(lighten($black, 50%), $lato, 1.25rem, normal, null, null, null, null, null);
           
           .footer-a {
             @extend .footer-li;
@@ -36,7 +36,7 @@
       .footer-small {
         display: inline-block;
         transform: skewX(-5deg) translateY(1px);
-        @include textStyle(lighten($black, 50%), $lato, 1rem, null, null, null, null, null, 1px);
+        @include textStyle(lighten($black, 50%), $lato, 1rem, normal, null, null, null, null, 1px);
       }
     }
   }

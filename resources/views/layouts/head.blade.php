@@ -9,6 +9,8 @@
 <meta name="title" content="@yield('meta-title')">
 <meta name="description" content="@yield('meta-desc')">
 <meta name="keywords" content="@yield('meta-key')">
+<!-- Favicon -->
+<link href="{{{ asset('images/favicon.png') }}}" rel="shortcut icon">
 <!-- Styles -->
 <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 <!-- Scripts -->

@@ -23,7 +23,7 @@
         text-align: center;
         margin: 0 auto;
         padding: 20px 0;
-        @include textStyle(darken($white, 5%), $source, null, null, null, null, null, 1 1px 1px rgba($black, 0.1), null);
+        @include textStyle(darken($white, 5%), $source, null, normal, null, null, null, 1 1px 1px rgba($black, 0.1), null);
         @include posLayout(absolute, $top: 0, $right: 0, $left: 0);
       }
       
@@ -41,7 +41,7 @@
       display: block;
       max-width: 90%;
       margin: 6em auto 0;
-      @include textStyle(lighten($black, 50%), $pt, null, null, null, null, null, 0 0 1px rgba($black, 0.1), null);
+      @include textStyle(lighten($black, 50%), $pt, null, normal, null, null, null, 0 0 1px rgba($black, 0.1), null);
       
       .auth-success {
         text-align: center;
@@ -55,12 +55,14 @@
         
         .form-control {
           background: none;
-          padding: 20px 0;
+          height: 45px;
           @extend %form-style;
           @extend %light-ease;
         }
         
-        .form-control::-webkit-input-placeholder {
+        .form-control::-webkit-input-placeholder,
+        .form-control::-moz-placeholder,
+        .form-control:-ms-input-placeholder {
         	color: rgba($black, 0.3);
         	font-weight: 900;
         }
@@ -86,11 +88,11 @@
           
           .btn-forgot {
             @extend %light-ease;
-            @include textStyle($hotpink, null, 0.85rem, null, null, null, null, null, null);
+            @include textStyle($hotpink, null, 0.85rem, normal, null, null, null, null, null);
             
             &:hover,
             &:focus {
-              @include textStyle(lighten($hotpink, 5%), null, null, null, null, null, none, null, null);
+              @include textStyle(lighten($hotpink, 5%), null, null, normal, null, null, none, null, null);
             }
           }
         }

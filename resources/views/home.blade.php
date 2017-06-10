@@ -15,22 +15,23 @@
   <div id="dashboard">
     <div class="dashboard-wrapper">
       
+      <!-- Brand -->
       <div class="dashboard-brand-wrapper">
         <a class="dashboard-brand" href="{{ url('/') }}">
           Suri
         </a>
       </div><!-- dashboard-brand-wrapper -->
       
+      <!-- User -->
       <div class="dashboard-user-wrapper">
-        <span class="dashboard-user">
-          <i class="fa fa-user" aria-hidden="true"></i>
-        </span>
+        <img class="dashboard-image img-circle" src="./images/uploads/{{ Auth::user()->avatar }}">
         <h5 class="dashboard-username">
           {{ Auth::user()->name }}
         </h5>
-        <span class="dashboard-online"></span>
+        <span class="dashboard-online" title="{{ Auth::user()->name }} is online"></span>
       </div><!-- dashboard-user-wrapper -->
       
+      <!-- List -->
       <div class="dashboard-list-wrapper">
         <ul class="dashboard-ul">
           <li class="dashboard-li">
@@ -61,6 +62,12 @@
             <a class="dashboard-a" href="#">
               <i class="fa fa-question-circle-o" aria-hidden="true"></i>
               <span class="dashboard-span">Help</span>
+            </a>
+          </li>
+          <li class="dashboard-li">
+            <a class="dashboard-a" href="{{ url('/settings') }}">
+              <i class="fa fa-cog" aria-hidden="true"></i>
+              <span class="dashboard-span">User Settings</span>
             </a>
           </li>
           <li class="dashboard-li">

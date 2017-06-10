@@ -5,6 +5,7 @@
 <header id="header">
   <div class="header-wrapper">
     
+    <!-- Burger -->
     <div class="header-burger-wrapper">
       <div class="header-burger">
         <span class="head-bar"></span>
@@ -13,12 +14,14 @@
       </div>
     </div>
     
+    <!-- Title -->
     <div class="header-title-wrapper">
       <h2 class="header-title">
         Suri Dashboard
       </h2>
     </div>
     
+    <!-- Add note -->
     <div class="header-add">
       <add @note-created="pushNote"></add>
     </div>

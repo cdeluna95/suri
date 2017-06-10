@@ -35,6 +35,7 @@
 
 <script>
   export default {
+    
     // Call notes property
     props: ['notes'],
     
@@ -50,5 +51,6 @@
         this.notes.splice(index, 1);
       }
     }
+    
   };
 </script>
