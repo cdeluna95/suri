@@ -21,23 +21,24 @@ class UserController extends Controller
     }
     
     /**
-     * Update avatar as per request
+     * Update avatar as per Request
      *
      * @return \Illuminate\Http\Request
      */
     public function update_avatar(Request $request)
     {
+      $user = Auth::user();
+      
       if($request->hasFile('avatar')) {
-        $user = Auth::user();
         $avatar = $request->file('avatar');
         $fileName = time() . '.' . $avatar->getClientOriginalExtension();
         
         // Delete current image before uploading new image
         if($user->avatar !== 'default.jpg') {
-          $file = '/images/uploads/';
+          $filePath = '/images/uploads/';
           $lastFile = $user->avatar;
           
-          File::Delete(public_path($file . $lastFile));
+          File::Delete(public_path($filePath . $lastFile));
         }
         
         // Resize-as-fit and save avatar

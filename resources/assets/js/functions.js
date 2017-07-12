@@ -54,14 +54,3 @@ $(function() {
     $(this).find('textarea').focus();
   });
 });
-
-/**
- * Fade in the note upon click
- */
-$(function() {
-  $('.btn-plus').on('click', function() {
-    $('.note').animate({
-      opacity: '1.0',
-    }, 300);
-  });
-});

@@ -7,6 +7,7 @@
 
 require('./bootstrap');
 require('./functions');
+import Router from './routes.js';
 
 window.Vue = require('vue');
 
@@ -24,15 +25,42 @@ const app = new Vue({
     // Use #suri-app element
     el: '#suri-app',
     
-    data: {
+    router: Router,
+    
+    data: function() {
       // Initialize notes array
-      notes: []
+      return {
+        notes: []
+      };
+    },
+    
+    created: function() {
+      // Call getNotes()
+      this.fetchNotes();
     },
     
     methods: {
+      // Get notes from the Notes API
+      fetchNotes: function() {
+        window.axios.get('/notes')
+          .then(response => {
+            console.log(response);
+            this.notes = response.data;
+          })
+          .catch(error => {
+            console.log(error.response.data);
+            this.notes = error.response.data;
+            this.data = [];
+          });
+      },
+      
       // Push note to notes array
       pushNote: function(note) {
-        this.notes.push(note);
+        window.axios.post('/notes', note)
+          .then(response => {
+            console.log(response);
+            this.notes.push(note);
+          });
       }
     }
 });

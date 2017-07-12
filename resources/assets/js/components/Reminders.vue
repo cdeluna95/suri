@@ -27,7 +27,7 @@
       :note="note"
       :index="index"
       :key="note.id"
-      @note-deleted="spliceNote">
+      @note-deleted="spliceNote(note.id)">
     </note> <!-- note -->
     
   </div><!-- reminders -->
@@ -42,13 +42,25 @@
     methods: {
       // Push note to notes array
       pushNote: function(note) {
-        this.notes.push(note);
+        window.axios.post('/notes', note)
+          .then(response => {
+            console.log(response);
+            this.notes.push(note);
+          });
       },
       
       // Remove note from array
-      spliceNote: function(note) {
-        var index = this.notes.indexOf(note);
-        this.notes.splice(index, 1);
+      spliceNote: function(id) {
+        var confirmBox = confirm("Are you sure you want to delete this note?");
+        
+        if(confirmBox === true) {
+          window.axios.delete('/notes/' + id)
+            .then(response => {
+              console.log(response);
+              var index = this.notes.indexOf(id);
+              this.notes.splice(index, 1);
+            });
+        }
       }
     }
     

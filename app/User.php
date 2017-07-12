@@ -26,4 +26,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    
+    /**
+   * User has many Note
+   *
+   * @return Note
+   */
+    public function notes()
+    {
+        return $this->hasMany(Note::class);
+    }
 }

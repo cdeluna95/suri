@@ -6,9 +6,9 @@
   box-shadow: 0 4px 8px rgba($black, 0.2);
   position: relative;
   overflow: hidden;
-  opacity: 0;
+  word-break: break-all;
   @extend %light-ease;
-  @include displayProps(block, $width: 200px, $height: 200px, $margin: 5px);
+  @include displayProps(block, $width: 200px, $height: 200px, $margin: 5px, $padding: 2.5px 7.5px);
   
   &:nth-child(odd) {
     transform: rotate(3deg);
@@ -33,13 +33,12 @@
   .note-wrapper {
     
     .note-p {
-      padding: 5px 10px;
       @include textStyle(lighten($black, 25%), $indie, 24px, normal, null, null, null, null, null);
     }
     
     .note-icons {
       z-index: 1;
-      @include posLayout(absolute, $right: 5px, $bottom: 2.5px);
+      @include posLayout(absolute, $right: 2.5px, $bottom: 2.5px);
       
       .btn-edit,
       .btn-delete {
@@ -75,7 +74,7 @@
     .note-textarea {
       resize: none;
       @include textStyle(lighten($black, 25%), $indie, 24px, normal, null, null, null, null, null);
-      @include btnStyle(rgba($black, 0), 0, 0, none, 4.5px 10px);
+      @include btnStyle(rgba($black, 0), 0, 0, none, 0);
       @include displayProps(block, $width: 100%, $height: 165px);
     }
     

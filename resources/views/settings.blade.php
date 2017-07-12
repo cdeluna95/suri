@@ -37,7 +37,7 @@
       
       <!-- Upload -->
       <form class="form-group" enctype="multipart/form-data" method="POST" action="/settings">
-        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        {{ csrf_field() }}
         <input id="file" class="file" type="file" name="avatar" data-multiple-caption="{count} files selected" multiple>
         <label for="file" class="btn btn-file">
           <i class="fa fa-picture-o" aria-hidden="true"></i>

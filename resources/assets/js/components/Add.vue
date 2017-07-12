@@ -19,9 +19,7 @@
       // Emit event listener note-created
       createNote: function() {
         var text = this.noteText;
-        this.$emit('note-created', {
-          note: text
-        });
+        this.$emit('note-created', { note: text });
       }
     }
     

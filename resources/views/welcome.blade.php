@@ -32,9 +32,15 @@
     
     <!-- Get started -->
     <div class="suri-started-wrapper">
+      @if (Auth::guest())
       <a class="suri-started" href="{{ route('register') }}">
         Get started
       </a>
+      @else
+      <a class="suri-started" href="{{ route('home') }}">
+        Dashboard
+      </a>
+      @endif
     </div><!-- suri-started-wrapper -->
     
   </div><!-- welcome-wrapper -->
