@@ -1,19 +1,10 @@
-import Vue from 'vue';
-import VueRouter from 'vue-router';
-import Reminders from './components/Reminders.vue';
-import Flashcards from './components/Flashcards.vue';
-import Quizzes from './components/Quizzes.vue';
 
-Vue.use(VueRouter);
-
-const routes = [
-  { path: '/reminders', component: Reminders },
-  { path: '/flashcards', component: Flashcards },
-  { path: '/quizzes', component: Quizzes }
+/**
+ * Here, we'll use this as a dedicated file to set up our routing here.
+ */
+export default [
+  { path: '/reminders', component: require('./components/Reminders.vue') },
+  { path: '/flashcards', component: require('./components/Flashcards.vue') },
+  { path: '/about', component: require('./components/About.vue') },
+  { path: '/help', component: require('./components/Help.vue') }
 ];
-
-const router = new VueRouter({
-  routes: routes
-});
-
-export default router;

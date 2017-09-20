@@ -80,20 +80,20 @@
             <!-- Dropdown menu -->
             <ul class="dropdown-menu" role="menu">
               <li>
-                <a href="{{ route('home') }}">
+                <a href="{{ route('home') }}#/reminders">
                   Dashboard
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="{{ route('home') }}#/flashcards">
                   Flashcards
                 </a>
               </li>
-              <li>
-                <a href="#">
-                  Quizzes
-                </a>
-              </li>
+              <!--<li>-->
+              <!--  <a href="#">-->
+              <!--    Quizzes-->
+              <!--  </a>-->
+              <!--</li>-->
               <li>
                 <a href="{{ url('/settings') }}">
                   User Settings

@@ -35,34 +35,34 @@
       <div class="dashboard-list-wrapper">
         <ul class="dashboard-ul">
           <li class="dashboard-li">
-            <a class="dashboard-a active" href="{{ route('home') }}">
+            <router-link class="dashboard-a" to="/reminders" exact>
               <i class="fa fa-tachometer" aria-hidden="true"></i>
               <span class="dashboard-span">Dashboard</span>
-            </a>
+            </router-link>
           </li>
           <li class="dashboard-li">
-            <a class="dashboard-a" href="#">
+            <router-link class="dashboard-a" to="/flashcards" exact>
               <i class="fa fa-list-alt" aria-hidden="true"></i>
               <span class="dashboard-span">Flashcards</span>
-            </a>
+            </router-link>
           </li>
+          <!--<li class="dashboard-li">-->
+          <!--  <a class="dashboard-a" href="#">-->
+          <!--    <i class="fa fa-file-text-o" aria-hidden="true"></i>-->
+          <!--    <span class="dashboard-span">Quizzes</span>-->
+          <!--  </a>-->
+          <!--</li>-->
           <li class="dashboard-li">
-            <a class="dashboard-a" href="#">
-              <i class="fa fa-file-text-o" aria-hidden="true"></i>
-              <span class="dashboard-span">Quizzes</span>
-            </a>
-          </li>
-          <li class="dashboard-li">
-            <a class="dashboard-a" href="#">
+            <router-link class="dashboard-a" to="/about" exact>
               <i class="fa fa-info" aria-hidden="true"></i>
               <span class="dashboard-span">About</span>
-            </a>
+            </router-link>
           </li>
           <li class="dashboard-li">
-            <a class="dashboard-a" href="#">
+            <router-link class="dashboard-a" to="/help" exact>
               <i class="fa fa-question-circle-o" aria-hidden="true"></i>
               <span class="dashboard-span">Help</span>
-            </a>
+            </router-link>
           </li>
           <li class="dashboard-li">
             <a class="dashboard-a" href="{{ url('/settings') }}">
@@ -89,8 +89,8 @@
       Feed
     ------------------------->
   <div id="feed">
-    <div class="reminders-wrapper">
-      <reminders :notes="notes"></reminders>
+    <div class="feed-wrapper">
+      <router-view :notes="notes"></router-view>
     </div>
   </div><!-- feed -->
   

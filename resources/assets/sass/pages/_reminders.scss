@@ -9,9 +9,12 @@
     @include transProps(300ms ease-in-out);
   }
   
-  .reminders-wrapper {
+  .feed-wrapper {
     margin: 6em 0 4em 0;
     
+    /**
+     * Reminders styles
+     */
     .reminders {
       @include flexContLayout(flex, $direction: row, $wrap: wrap, $justify-content: center);
       

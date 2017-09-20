@@ -26,7 +26,7 @@
     <!-- Subtitle -->
     <div class="suri-subtitle-wrapper">
       <h4 class="suri-subtitle">
-        <span class="suri-span">Suri</span> facilitates your learning needs by offering you sticky notes, flashcards, quizzes, and more!
+        <span class="suri-span">Suri</span> facilitates your learning needs by offering you sticky notes, flashcards, and more!
       </h4>
     </div><!-- suri-subtitle-wrapper -->
     
@@ -37,7 +37,7 @@
         Get started
       </a>
       @else
-      <a class="suri-started" href="{{ route('home') }}">
+      <a class="suri-started" href="{{ route('home') }}#/reminders">
         Dashboard
       </a>
       @endif

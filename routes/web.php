@@ -19,6 +19,15 @@ Route::get('/', function () {
 // Routes to home page as user
 Route::get('/home', 'HomeController@index')->name('home');
 
+// Routes to home page in accordance with Vue routing
+Route::group(['middleware' => 'auth'], function () {
+  Route::group(['prefix' => 'app'], function () {
+    Route::get('/{vue_capture?}', function () {
+        return view('home');
+    })->where('vue_capture', '[\/\w\.-]*');
+  });
+});
+
 // Routes to settings as user
 Route::get('settings', 'UserController@settings')->middleware('auth');
 Route::post('settings', 'UserController@update_avatar');
@@ -39,13 +48,24 @@ Auth::routes();
 
 // Send get request to Notes API
 Route::get('/notes', function () {
-  return App\Note::with('user')->get();
+  $user = auth()->user();
+  return $user->notes()->get();
 });
+// Route::get('/notes', function () {
+//   return App\Note::with('user')->get();
+// });
 
 // Send get request and store to note.id
 Route::get('/notes/{id}', function ($id) {
-  return App\Note::findOrFail($id);
+  $note =  App\Note::findOrFail($id);
+  if($note->user_id == auth()->id()) {
+    return $note;
+  }
+  return "Only the owner can see his or her note.";
 });
+// Route::get('/notes/{id}', function ($id) {
+//   return App\Note::findOrFail($id);
+// });
 
 // Send post request to Notes API
 Route::post('/notes', function () {
