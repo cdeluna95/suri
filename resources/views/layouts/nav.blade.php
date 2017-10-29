@@ -34,12 +34,12 @@
         <!-- Guest -->
         @if (Auth::guest())
           <li>
-            <a class="nav-about" href="#">
+            <a class="nav-about" href="{{ url('/about') }}">
               About
             </a>
           </li>
           <li>
-            <a class="nav-help" href="#">
+            <a class="nav-help" href="{{ url('/help') }}">
               Help
             </a>
           </li>
@@ -57,12 +57,12 @@
         <!-- User -->
         @else
           <li>
-            <a class="nav-about" href="#">
+            <a class="nav-about" href="{{ url('/about') }}">
               About
             </a>
           </li>
           <li>
-            <a class="nav-help" href="#">
+            <a class="nav-help" href="{{ url('/help') }}">
               Help
             </a>
           </li>
