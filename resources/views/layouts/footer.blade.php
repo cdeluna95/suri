@@ -9,10 +9,10 @@
     <div class="footer-top">
       <ul class="footer-ul">
         <li class="footer-li">
-          <a class="footer-a" href="#">About</a> |
+          <a class="footer-a" href="{{ url('/about') }}">About</a> |
         </li>
         <li class="footer-li">
-          <a class="footer-a" href="#">Help</a>
+          <a class="footer-a" href="{{ url('/help') }}">Help</a>
         </li>
       </ul>
     </div>

@@ -1,0 +1,61 @@
+/**
+ * Help styles
+ */
+#help {
+  
+  .help-wrapper {
+    text-align: center;
+    padding: 5em 0;
+    @include deviceBreak("max-width: 767.5px") {
+      padding: 10em 0 5em 0;
+    }
+    
+    .help-title-wrapper {
+      
+      .help-title {
+        display: inline;
+        @include textStyle(lighten($black, 30%), $open, 2rem, 900, null, null, null, 0 0 1px rgba($black, 0.1), null);
+        @include deviceBreak("max-width: 767.5px") {
+          font-size: calc(2rem / 1.05);
+        }
+      }
+      
+      .help-subtitle-wrapper {
+        
+        .help-subtitle {
+          text-align: left;
+          display: inline-block;
+          max-width: 70%;
+          margin: 1em 0 2em;
+          @include textStyle(lighten($black, 60%), $lato, 1.25rem, normal, null, null, null, null, null);
+          @include deviceBreak("max-width: 767.5px") {
+            font-size: calc(1.25rem / 1.05);
+          }
+        }
+      }
+    }
+    
+    .help-faq-wrapper {
+      text-align: left;
+      display: inline-block;
+      max-width: 35%;
+      @include deviceBreak("max-width: 767.5px") {
+        max-width: 90%;
+      }
+      
+      .help-faq {
+        margin: 1em 0;
+        
+        .help-faq-question,
+        .help-faq-answer {
+          margin: 0;
+          @include textStyle(null, $lato, 1rem, normal, null, null, null, null, null);
+        }
+        
+        .help-faq-answer {
+          color: lighten($black, 50%);
+        }
+      }
+    }
+  }
+}

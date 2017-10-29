@@ -9,11 +9,19 @@
 }
 
 /**
- * Set uniform background for guest users
+ * Set uniform background for guest users on welcome page
  */
 %bg-welcome {
   height: 100%;
   @include bgProps(rgba($black, 0.5), rgba($black, 0.3), ("../images/supplies.jpg"), center top, cover, no-repeat, null);
+}
+
+/**
+ * Set uniform background for guest users on about page
+ */
+%bg-about {
+  height: 100%;
+  @include bgProps(rgba($black, 0.2), rgba($black, 0.1), ("../images/students.jpg"), center top, cover, no-repeat, null);
 }
 
 /**

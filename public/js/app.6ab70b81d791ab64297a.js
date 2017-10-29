@@ -1605,25 +1605,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/About.vue":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Add.vue":
+/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/AddNote.vue":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1650,6 +1632,40 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     createNote: function createNote() {
       var text = this.noteText;
       this.$emit('note-created', { note: text });
+    }
+  }
+
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/AddSet.vue":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+
+  data: function data() {
+    // Set setTitle to some title
+    return {
+      setTitle: 'Untitled Set'
+    };
+  },
+
+  methods: {
+    // Emit event listener set-created
+    createSet: function createSet() {
+      var title = this.setTitle;
+      this.$emit('set-created', { set: title });
     }
   }
 
@@ -1723,24 +1739,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Help.vue":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -1923,6 +1921,100 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           _this2.notes.splice(index, 1);
         });
       }
+    }
+  }
+
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Set.vue":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+
+  // Call set property
+  props: ['set']
+
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Sets.vue":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+
+  // Call sets property
+  props: ['sets'],
+
+  methods: {
+    // Push set to sets array
+    pushSet: function pushSet(set) {
+      this.sets.push(set);
     }
   }
 
@@ -31985,21 +32077,29 @@ if (false) {
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-47b518fa\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/About.vue":
+/***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-3df215fb\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/AddSet.vue":
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "about"
-  }, [_c('h1', [_vm._v("About")])])
-}]}
+  return _c('button', {
+    staticClass: "btn-plus",
+    on: {
+      "click": _vm.createSet
+    }
+  }, [_c('i', {
+    staticClass: "fa fa-plus",
+    attrs: {
+      "aria-hidden": "true"
+    }
+  }), _vm._v(" "), _c('span', {
+    staticClass: "set-plus"
+  }, [_vm._v("Create set")])])
+},staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-47b518fa", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-3df215fb", module.exports)
   }
 }
 
@@ -32023,9 +32123,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "reminders-empty-h2"
   }, [_vm._v("\n      You're all good!\n    ")]), _vm._v(" "), _c('p', {
     staticClass: "reminders-empty-p"
-  }, [_vm._v("\n      Have any assignment? Add a note!\n    ")]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n      Have any assignments? Add a note!\n    ")]), _vm._v(" "), _c('div', {
     staticClass: "reminders-add"
-  }, [_c('add', {
+  }, [_c('add-note', {
     on: {
       "note-created": _vm.pushNote
     }
@@ -32085,21 +32185,94 @@ if (false) {
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-5b704c8a\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/Help.vue":
+/***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-56c5d2cb\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/Sets.vue":
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
+  return _c('div', {
+    staticClass: "sets"
+  }, [_c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.sets.length === 0),
+      expression: "sets.length === 0"
+    }],
+    staticClass: "sets-empty"
+  }, [_c('h2', {
+    staticClass: "sets-empty-h2"
+  }, [_vm._v("\n      You're all good!\n    ")]), _vm._v(" "), _c('p', {
+    staticClass: "sets-empty-p"
+  }, [_vm._v("\n      Have anything to study? Add a set!\n    ")]), _vm._v(" "), _c('div', {
+    staticClass: "sets-add"
+  }, [_c('add-set', {
+    on: {
+      "set-created": _vm.pushSet
+    }
+  })], 1), _vm._v(" "), _vm._m(0)]), _vm._v(" "), _vm._l((_vm.sets), function(set, index) {
+    return _c('set', {
+      key: set.id,
+      attrs: {
+        "set": set,
+        "index": index
+      }
+    })
+  })], 2)
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "help"
-  }, [_c('h1', [_vm._v("Help")])])
+    staticClass: "sets-img-wrapper"
+  }, [_c('img', {
+    staticClass: "sets-img img-auto",
+    attrs: {
+      "src": "images/set.png"
+    }
+  })])
 }]}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-5b704c8a", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-56c5d2cb", module.exports)
+  }
+}
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-5d84f958\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/Set.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "set"
+  }, [_c('div', {
+    staticClass: "set-wrapper"
+  }, [_c('p', {
+    staticClass: "set-h3"
+  }, [_vm._v("\n      " + _vm._s(_vm.set.set) + "\n    ")]), _vm._v(" "), _vm._m(0)])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "set-icons"
+  }, [_c('button', {
+    staticClass: "btn-edit"
+  }, [_c('i', {
+    staticClass: "fa fa-pencil",
+    attrs: {
+      "aria-hidden": "true"
+    }
+  })]), _vm._v(" "), _c('button', {
+    staticClass: "btn-delete"
+  }, [_c('i', {
+    staticClass: "fa fa-trash",
+    attrs: {
+      "aria-hidden": "true"
+    }
+  })])])
+}]}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-5d84f958", module.exports)
   }
 }
 
@@ -32233,7 +32406,7 @@ if (false) {
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-ba8303d2\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/Add.vue":
+/***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-e6611cae\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/AddNote.vue":
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -32255,7 +32428,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-ba8303d2", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-e6611cae", module.exports)
   }
 }
 
@@ -44461,12 +44634,13 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
  */
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('reminders', __webpack_require__("./resources/assets/js/components/Reminders.vue"));
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('note', __webpack_require__("./resources/assets/js/components/Note.vue"));
-__WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('add', __webpack_require__("./resources/assets/js/components/Add.vue"));
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('add-note', __webpack_require__("./resources/assets/js/components/AddNote.vue"));
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('sets', __webpack_require__("./resources/assets/js/components/Sets.vue"));
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('set', __webpack_require__("./resources/assets/js/components/Set.vue"));
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('add-set', __webpack_require__("./resources/assets/js/components/AddSet.vue"));
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('flashcards', __webpack_require__("./resources/assets/js/components/Flashcards.vue"));
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('flashleft', __webpack_require__("./resources/assets/js/components/Flashleft.vue"));
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('flashright', __webpack_require__("./resources/assets/js/components/Flashright.vue"));
-__WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('about', __webpack_require__("./resources/assets/js/components/About.vue"));
-__WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('help', __webpack_require__("./resources/assets/js/components/Help.vue"));
 
 var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
   routes: __WEBPACK_IMPORTED_MODULE_2__routes__["a" /* default */]
@@ -44480,9 +44654,10 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
   router: router,
 
   data: function data() {
-    // Initialize notes array
+    // Initialize notes and sets array
     return {
-      notes: []
+      notes: [],
+      sets: []
     };
   },
 
@@ -44566,22 +44741,22 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-/***/ "./resources/assets/js/components/About.vue":
+/***/ "./resources/assets/js/components/AddNote.vue":
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")(
   /* script */
-  __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/About.vue"),
+  __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/AddNote.vue"),
   /* template */
-  __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-47b518fa\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/About.vue"),
+  __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-e6611cae\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/AddNote.vue"),
   /* scopeId */
   null,
   /* cssModules */
   null
 )
-Component.options.__file = "/home/ubuntu/workspace/stec4450-project/resources/assets/js/components/About.vue"
+Component.options.__file = "/home/ubuntu/workspace/stec4450-project/resources/assets/js/components/AddNote.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] About.vue: functional components are not supported with templates, they should use render functions.")}
+if (Component.options.functional) {console.error("[vue-loader] AddNote.vue: functional components are not supported with templates, they should use render functions.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -44590,9 +44765,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-47b518fa", Component.options)
+    hotAPI.createRecord("data-v-e6611cae", Component.options)
   } else {
-    hotAPI.reload("data-v-47b518fa", Component.options)
+    hotAPI.reload("data-v-e6611cae", Component.options)
   }
 })()}
 
@@ -44601,22 +44776,22 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ "./resources/assets/js/components/Add.vue":
+/***/ "./resources/assets/js/components/AddSet.vue":
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")(
   /* script */
-  __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Add.vue"),
+  __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/AddSet.vue"),
   /* template */
-  __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-ba8303d2\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/Add.vue"),
+  __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-3df215fb\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/AddSet.vue"),
   /* scopeId */
   null,
   /* cssModules */
   null
 )
-Component.options.__file = "/home/ubuntu/workspace/stec4450-project/resources/assets/js/components/Add.vue"
+Component.options.__file = "/home/ubuntu/workspace/stec4450-project/resources/assets/js/components/AddSet.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] Add.vue: functional components are not supported with templates, they should use render functions.")}
+if (Component.options.functional) {console.error("[vue-loader] AddSet.vue: functional components are not supported with templates, they should use render functions.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -44625,9 +44800,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-ba8303d2", Component.options)
+    hotAPI.createRecord("data-v-3df215fb", Component.options)
   } else {
-    hotAPI.reload("data-v-ba8303d2", Component.options)
+    hotAPI.reload("data-v-3df215fb", Component.options)
   }
 })()}
 
@@ -44741,41 +44916,6 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ "./resources/assets/js/components/Help.vue":
-/***/ (function(module, exports, __webpack_require__) {
-
-var Component = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")(
-  /* script */
-  __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Help.vue"),
-  /* template */
-  __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-5b704c8a\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/Help.vue"),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-Component.options.__file = "/home/ubuntu/workspace/stec4450-project/resources/assets/js/components/Help.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] Help.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-5b704c8a", Component.options)
-  } else {
-    hotAPI.reload("data-v-5b704c8a", Component.options)
-  }
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-
 /***/ "./resources/assets/js/components/Note.vue":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -44838,6 +44978,76 @@ if (false) {(function () {
     hotAPI.createRecord("data-v-535ff592", Component.options)
   } else {
     hotAPI.reload("data-v-535ff592", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+
+/***/ "./resources/assets/js/components/Set.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")(
+  /* script */
+  __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Set.vue"),
+  /* template */
+  __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-5d84f958\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/Set.vue"),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "/home/ubuntu/workspace/stec4450-project/resources/assets/js/components/Set.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] Set.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-5d84f958", Component.options)
+  } else {
+    hotAPI.reload("data-v-5d84f958", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+
+/***/ "./resources/assets/js/components/Sets.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")(
+  /* script */
+  __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Sets.vue"),
+  /* template */
+  __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-56c5d2cb\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/Sets.vue"),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "/home/ubuntu/workspace/stec4450-project/resources/assets/js/components/Sets.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] Sets.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-56c5d2cb", Component.options)
+  } else {
+    hotAPI.reload("data-v-56c5d2cb", Component.options)
   }
 })()}
 
@@ -44910,7 +45120,7 @@ $(function () {
 /**
  * Here, we'll use this as a dedicated file to set up our routing here.
  */
-/* harmony default export */ __webpack_exports__["a"] = ([{ path: '/reminders', component: __webpack_require__("./resources/assets/js/components/Reminders.vue") }, { path: '/flashcards', component: __webpack_require__("./resources/assets/js/components/Flashcards.vue") }, { path: '/about', component: __webpack_require__("./resources/assets/js/components/About.vue") }, { path: '/help', component: __webpack_require__("./resources/assets/js/components/Help.vue") }]);
+/* harmony default export */ __webpack_exports__["a"] = ([{ path: '/reminders', component: __webpack_require__("./resources/assets/js/components/Reminders.vue") }, { path: '/sets', component: __webpack_require__("./resources/assets/js/components/Sets.vue") }]);
 
 /***/ }),
 

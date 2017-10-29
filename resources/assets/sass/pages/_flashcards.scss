@@ -1,75 +1,64 @@
 /**
- * Feed styles
+ * Flashcards styles
  */
-#feed {
-  // Defined in reminders
+.flashcards {
   
-  .feed-wrapper {
-    // Defined in reminders
+  .container-fluid {
+    @include deviceBreak('max-width: 767.5px') {
+      margin: 0;
+      padding: 0;
+    }
     
-    /**
-     * Flashcards styles
-     */
-    .flashcards {
+    .row {
+      @include deviceBreak('max-width: 767.5px') {
+        margin: 0 0 10px 0;
+      }
       
-      .container-fluid {
+      .col-md-6 {
+        padding: 0 2.5px 0 10px;
         @include deviceBreak('max-width: 767.5px') {
-          margin: 0;
-          padding: 0;
+          padding: 0 5px;
         }
         
-        .row {
-          @include deviceBreak('max-width: 767.5px') {
-            margin: 0 0 10px 0;
+        .well-md {
+          border-radius: 0;
+          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+          
+          .flashcards-p {
+            display: inline;
+            @include textStyle(lighten($black, 25%), $lato, 16px, normal, null, null, null, null, null);
           }
           
-          .col-md-6 {
-            padding: 0 2.5px 0 10px;
-            @include deviceBreak('max-width: 767.5px') {
-              padding: 0 5px;
+          .flashcards-icons {
+            @include posLayout(absolute, $top: 22.5px, $right: 20px);
+            
+            .btn-edit,
+            .btn-delete {
+              @include btnStyle(none, 0, 0, none, 0 10px);
             }
             
-            .well-md {
-              border-radius: 0;
-              box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+            .fa-pencil,
+            .fa-trash {
+              font-size: 20px;
+              opacity: 0.5;
+              @extend %light-ease;
               
-              .flashcards-p {
-                display: inline;
-                @include textStyle(lighten($black, 25%), $lato, 16px, normal, null, null, null, null, null);
+              &:hover {
+                opacity: 1;
               }
+            }
+            
+            .fa-pencil {
               
-              .flashcards-icons {
-                @include posLayout(absolute, $top: 22.5px, $right: 20px);
-                
-                .btn-edit,
-                .btn-delete {
-                  @include btnStyle(none, 0, 0, none, 0 10px);
-                }
-                
-                .fa-pencil,
-                .fa-trash {
-                  font-size: 20px;
-                  opacity: 0.5;
-                  @extend %light-ease;
-                  
-                  &:hover {
-                    opacity: 1;
-                  }
-                }
-                
-                .fa-pencil {
-                  
-                  &:hover {
-                    color: $green;
-                  }
-                }
-                
-                .fa-trash {
-                  
-                  &:hover {
-                    color: $red;
-                  }
-                }
+              &:hover {
+                color: $green;
+              }
+            }
+            
+            .fa-trash {
+              
+              &:hover {
+                color: $red;
               }
             }
           }

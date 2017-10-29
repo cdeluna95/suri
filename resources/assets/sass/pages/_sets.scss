@@ -1,0 +1,62 @@
+/**
+ * Feed styles
+ */
+#feed {
+  // Defined in reminders
+  
+  .feed-wrapper {
+    // Defined in reminders
+    
+    /**
+     * Sets styles
+     */
+    .sets {
+      @include flexContLayout(flex, $direction: row, $wrap: wrap, $justify-content: center);
+      
+      .sets-empty {
+        text-align: center;
+        
+        .sets-empty-h2,
+        .sets-empty-p {
+          opacity: 0;
+          animation: fadeOut 1000ms ease forwards;
+          @include textStyle(lighten($black, 25%), $lato, null, normal, null, null, null, null, -0.5px);
+        }
+        
+        .sets-empty-h2 {
+          animation-delay: 0ms;
+        }
+        
+        .sets-empty-p {
+          animation-delay: 200ms;
+        }
+        
+        .sets-add {
+          margin: 40px 0;
+          opacity: 0;
+          animation: zoom 1000ms ease 400ms forwards;
+          
+          .btn-plus {
+            display: inline-block;
+            @include btnStyle($hotpink, 0, 0, none, 10px 20px 11px);
+            @include textStyle(darken($white, 5%), $lato, 16px, 900, null, null, null, null, null);
+          }
+          
+          .fa {
+            margin: 0 5px 0 0;
+          }
+          
+          .set-plus {
+            margin: 0 0 0 5px;
+          }
+        }
+        
+        .sets-img-wrapper {
+          margin: 60px 0;
+          opacity: 0;
+          animation: zoom 1000ms ease 600ms forwards;
+        }
+      }
+    }
+  }
+}

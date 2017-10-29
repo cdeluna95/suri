@@ -41,28 +41,22 @@
             </router-link>
           </li>
           <li class="dashboard-li">
-            <router-link class="dashboard-a" to="/flashcards" exact>
+            <router-link class="dashboard-a" to="/sets" exact>
               <i class="fa fa-list-alt" aria-hidden="true"></i>
               <span class="dashboard-span">Flashcards</span>
             </router-link>
           </li>
-          <!--<li class="dashboard-li">-->
-          <!--  <a class="dashboard-a" href="#">-->
-          <!--    <i class="fa fa-file-text-o" aria-hidden="true"></i>-->
-          <!--    <span class="dashboard-span">Quizzes</span>-->
-          <!--  </a>-->
-          <!--</li>-->
           <li class="dashboard-li">
-            <router-link class="dashboard-a" to="/about" exact>
+            <a class="dashboard-a" href="{{ url('/about') }}">
               <i class="fa fa-info" aria-hidden="true"></i>
-              <span class="dashboard-span">About</span>
-            </router-link>
+            <span class="dashboard-span">About</span>
+            </a>
           </li>
           <li class="dashboard-li">
-            <router-link class="dashboard-a" to="/help" exact>
+            <a class="dashboard-a" href="{{ url('/help') }}">
               <i class="fa fa-question-circle-o" aria-hidden="true"></i>
               <span class="dashboard-span">Help</span>
-            </router-link>
+            </a>
           </li>
           <li class="dashboard-li">
             <a class="dashboard-a" href="{{ url('/settings') }}">
@@ -90,7 +84,10 @@
     ------------------------->
   <div id="feed">
     <div class="feed-wrapper">
-      <router-view :notes="notes"></router-view>
+      <router-view
+        :notes="notes"
+        :sets="sets">
+      </router-view>
     </div>
   </div><!-- feed -->
   

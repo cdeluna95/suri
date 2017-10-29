@@ -23,7 +23,7 @@
     
     <!-- Add note -->
     <div class="header-add">
-      <add @note-created="pushNote"></add>
+      <add-note @note-created="pushNote"></add-note>
     </div>
     
   </div><!-- header-wrapper -->

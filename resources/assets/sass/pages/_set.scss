@@ -1,0 +1,71 @@
+/**
+ * Set styles
+ */
+.set {
+  background: lighten($lightblue, 20%);
+  border-radius: 15px 5px 15px 15px;
+  box-shadow: 0 4px 4px rgba($black, 0.2);
+  position: relative;
+  @extend %regular-ease;
+  @include displayProps(block, $width: 300px, $height: 200px, $margin: 20px 0 0 0);
+  
+  &:after {
+    content: '';
+    background: lighten($lightblue, 20%);
+    border-radius: 15px 5px 0 15px;
+    @include displayProps(block, $width: 50%, $height: 40px);
+    @include posLayout(absolute, $top: -15px, $right: 0);
+  }
+  
+  &:hover,
+  &:focus {
+    box-shadow: 0 4px 8px rgba($black, 0.2),
+                0 16px 64px rgba($black, 0.1);
+    z-index: 1;
+    transform: translateY(-10px);
+  }
+  
+  .set-wrapper {
+    text-align: center;
+    margin: 40px 0 0 0;
+    
+    .set-h3 {
+      @include textStyle(darken($white, 10%), $lato, 1.5rem, 900, null, null, null, 1px 1px 1px rgba($black, 0.2), null);
+    }
+    
+    .set-icons {
+      z-index: 1;
+      @include posLayout(absolute, $right: 10px, $bottom: 7.5px);
+      
+      .btn-edit,
+      .btn-delete {
+        @include btnStyle(none, 0, 0, none, 0 5px);
+      }
+      
+      .fa-pencil,
+      .fa-trash {
+        font-size: 16px;
+        opacity: 0.5;
+        @extend %light-ease;
+        
+        &:hover {
+          opacity: 1;
+        }
+      }
+      
+      .fa-pencil {
+        
+        &:hover {
+          color: $green;
+        }
+      }
+      
+      .fa-trash {
+        
+        &:hover {
+          color: $red;
+        }
+      }
+    }
+  }
+}

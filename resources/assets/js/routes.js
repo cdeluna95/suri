@@ -4,7 +4,5 @@
  */
 export default [
   { path: '/reminders', component: require('./components/Reminders.vue') },
-  { path: '/flashcards', component: require('./components/Flashcards.vue') },
-  { path: '/about', component: require('./components/About.vue') },
-  { path: '/help', component: require('./components/Help.vue') }
+  { path: '/sets', component: require('./components/Sets.vue') }
 ];

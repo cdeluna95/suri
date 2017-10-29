@@ -16,6 +16,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Routes to about page as guest
+Route::get('/about', function() {
+  return view('about');
+});
+
+// Routes to help page as guest
+Route::get('/help', function() {
+  return view('help');
+});
+
 // Routes to home page as user
 Route::get('/home', 'HomeController@index')->name('home');
 

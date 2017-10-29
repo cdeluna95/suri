@@ -9,10 +9,10 @@
         You're all good!
       </h2>
       <p class="reminders-empty-p">
-        Have any assignment? Add a note!
+        Have any assignments? Add a note!
       </p>
       <div class="reminders-add">
-        <add @note-created="pushNote"></add>
+        <add-note @note-created="pushNote"></add-note>
       </div>
       <div class="reminders-img-wrapper">
         <img class="reminders-img img-auto" src="images/sticky.png">

@@ -21,12 +21,13 @@ Vue.use(VueRouter);
  */
 Vue.component('reminders', require('./components/Reminders.vue'));
 Vue.component('note', require('./components/Note.vue'));
-Vue.component('add', require('./components/Add.vue'));
+Vue.component('add-note', require('./components/AddNote.vue'));
+Vue.component('sets', require('./components/Sets.vue'));
+Vue.component('set', require('./components/Set.vue'));
+Vue.component('add-set', require('./components/AddSet.vue'));
 Vue.component('flashcards', require('./components/Flashcards.vue'));
 Vue.component('flashleft', require('./components/Flashleft.vue'));
 Vue.component('flashright', require('./components/Flashright.vue'));
-Vue.component('about', require('./components/About.vue'));
-Vue.component('help', require('./components/Help.vue'));
 
 const router = new VueRouter({
   routes: Routes
@@ -40,9 +41,10 @@ const app = new Vue({
     router: router,
     
     data: function() {
-      // Initialize notes array
+      // Initialize notes and sets array
       return {
-        notes: []
+        notes: [],
+        sets: []
       };
     },
     
