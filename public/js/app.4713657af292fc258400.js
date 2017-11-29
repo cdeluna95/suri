@@ -1605,6 +1605,40 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/AddFlashcard.vue":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+
+  data: function data() {
+    // Set setTitle to some title
+    return {
+      setTerm: 'Enter term or definition here...'
+    };
+  },
+
+  methods: {
+    // Emit event listener flashcard-created
+    createFlashcard: function createFlashcard() {
+      var term = this.setTerm;
+      this.$emit('flashcard-created', { flashcard: term });
+    }
+  }
+
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/AddNote.vue":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1673,6 +1707,99 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Flashcard.vue":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+
+  // Call note property
+  props: ['flashcard'],
+
+  data: function data() {
+    // Initialize editing mode as false
+    return {
+      isEditing: false
+    };
+  },
+
+  methods: {
+    // Enter editing mode
+    editFlashcard: function editFlashcard(id) {
+      this.isEditing = true;
+    },
+
+    // Exit editing mode
+    saveFlashcard: function saveFlashcard(id) {
+      this.isEditing = false;
+    },
+
+    // Emit event listener flashcard-deleted
+    deleteFlashcard: function deleteFlashcard(flashcard) {
+      this.$emit('flashcard-deleted', flashcard);
+    }
+  }
+
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Flashcards.vue":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1691,40 +1818,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-
-/* harmony default export */ __webpack_exports__["default"] = ({});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Flashleft.vue":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Flashright.vue":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -1748,7 +1841,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony default export */ __webpack_exports__["default"] = ({
+
+  // Call flashcards property
+  props: ['flashcards'],
+
+  methods: {
+    // Push flashcard to flashcards array
+    pushFlashcard: function pushFlashcard(flashcard) {
+      this.flashcards.push(flashcard);
+    },
+
+    // Remove flashcard from array
+    spliceFlashcard: function spliceFlashcard(id) {
+      var index = this.flashcards.indexOf(id);
+      this.flashcards.splice(index, 1);
+    }
+  }
+
+});
 
 /***/ }),
 
@@ -1956,11 +2067,72 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 
   // Call set property
-  props: ['set']
+  props: ['set'],
+
+  data: function data() {
+    // Initialize editing mode as false
+    return {
+      isEditing: false,
+      set_id: this.$route.params.set_id,
+      setObj: {},
+      flashcard_id: this.$route.params.flashcard_id,
+      flashcardObj: {}
+    };
+  },
+
+  methods: {
+    // Enter editing mode
+    editSet: function editSet(id) {
+      this.isEditing = true;
+    },
+
+    // Exit editing mode
+    saveSet: function saveSet(id) {
+      this.isEditing = false;
+    },
+
+    // Emit event listener set-deleted
+    deleteSet: function deleteSet(set) {
+      this.$emit('set-deleted', set);
+    }
+  },
+
+  computed: {
+    isActive: function isActive() {
+      return this.$route.name === 'sets' || this.$route.name === 'flashcards';
+    }
+  }
 
 });
 
@@ -2005,6 +2177,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 
@@ -2015,6 +2188,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     // Push set to sets array
     pushSet: function pushSet(set) {
       this.sets.push(set);
+    },
+
+    // Remove set from array
+    spliceSet: function spliceSet(id) {
+      var index = this.sets.indexOf(id);
+      this.sets.splice(index, 1);
     }
   }
 
@@ -32009,74 +32188,6 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-041593a6\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/Flashright.vue":
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "flashright"
-  }, [_c('div', {
-    staticClass: "col-md-6"
-  }, [_c('div', {
-    staticClass: "well well-md"
-  }, [_c('p', {
-    staticClass: "flashcards-p"
-  }, [_vm._v("\n        Two\n      ")]), _vm._v(" "), _c('div', {
-    staticClass: "flashcards-icons"
-  }, [_c('button', {
-    staticClass: "btn-edit"
-  }, [_c('i', {
-    staticClass: "fa fa-pencil",
-    attrs: {
-      "aria-hidden": "true"
-    }
-  })]), _vm._v(" "), _c('button', {
-    staticClass: "btn-delete"
-  }, [_c('i', {
-    staticClass: "fa fa-trash",
-    attrs: {
-      "aria-hidden": "true"
-    }
-  })])])])])])
-}]}
-module.exports.render._withStripped = true
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-041593a6", module.exports)
-  }
-}
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-1f3003ed\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/Flashleft.vue":
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "flashleft"
-  }, [_c('div', {
-    staticClass: "col-md-6"
-  }, [_c('div', {
-    staticClass: "well well-md"
-  }, [_c('p', {
-    staticClass: "flashcards-p"
-  }, [_vm._v("\n        One\n      ")])])])])
-}]}
-module.exports.render._withStripped = true
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-1f3003ed", module.exports)
-  }
-}
-
-/***/ }),
-
 /***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-3df215fb\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/AddSet.vue":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -32170,11 +32281,47 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('div', {
     staticClass: "flashcards"
   }, [_c('div', {
-    staticClass: "container-fluid"
-  }, [_c('div', {
-    staticClass: "row"
-  }, [_c('flashleft'), _vm._v(" "), _c('flashright')], 1)])])
-},staticRenderFns: []}
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.flashcards.length === 0),
+      expression: "flashcards.length === 0"
+    }],
+    staticClass: "flashcards-empty"
+  }, [_c('h2', {
+    staticClass: "flashcards-empty-h2"
+  }, [_vm._v("\n      No terms here!\n    ")]), _vm._v(" "), _c('p', {
+    staticClass: "flashcards-empty-p"
+  }, [_vm._v("\n      Have anything to study? Add some terms!\n    ")]), _vm._v(" "), _c('div', {
+    staticClass: "flashcards-add"
+  }, [_c('add-flashcard', {
+    on: {
+      "flashcard-created": _vm.pushFlashcard
+    }
+  })], 1), _vm._v(" "), _vm._m(0)]), _vm._v(" "), _vm._l((_vm.flashcards), function(flashcard, index) {
+    return _c('flashcard', {
+      key: flashcard.id,
+      attrs: {
+        "flashcard": flashcard,
+        "index": index
+      },
+      on: {
+        "flashcard-deleted": function($event) {
+          _vm.spliceFlashcard(flashcard.id)
+        }
+      }
+    })
+  })], 2)
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "flashcards-img-wrapper"
+  }, [_c('img', {
+    staticClass: "flashcards-img img-auto",
+    attrs: {
+      "src": "images/set.png"
+    }
+  })])
+}]}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
@@ -32215,6 +32362,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       attrs: {
         "set": set,
         "index": index
+      },
+      on: {
+        "set-deleted": function($event) {
+          _vm.spliceSet(set.id)
+        }
       }
     })
   })], 2)
@@ -32224,7 +32376,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('img', {
     staticClass: "sets-img img-auto",
     attrs: {
-      "src": "images/set.png"
+      "src": "images/folder.jpg"
     }
   })])
 }]}
@@ -32243,31 +32395,126 @@ if (false) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "set"
+    staticClass: "set",
+    on: {
+      "dblclick": function($event) {
+        _vm.editSet(_vm.set.id, _vm.set.set)
+      }
+    }
   }, [_c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (!_vm.isEditing),
+      expression: "!isEditing"
+    }],
     staticClass: "set-wrapper"
-  }, [_c('p', {
-    staticClass: "set-h3"
-  }, [_vm._v("\n      " + _vm._s(_vm.set.set) + "\n    ")]), _vm._v(" "), _vm._m(0)])])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
+  }, [_c('router-link', {
+    staticClass: "set-h3",
+    class: {
+      'active': _vm.isActive
+    },
+    attrs: {
+      "to": '/sets/' + _vm.setObj.set_id + '/flashcards/' + _vm.flashcardObj.flashcard_id,
+      "exact": ""
+    }
+  }, [_vm._v("\n      " + _vm._s(_vm.set.set) + "\n    ")]), _vm._v(" "), _c('div', {
     staticClass: "set-icons"
   }, [_c('button', {
-    staticClass: "btn-edit"
+    staticClass: "btn-edit",
+    on: {
+      "click": function($event) {
+        _vm.editSet(_vm.set.id, _vm.set.set)
+      }
+    }
   }, [_c('i', {
     staticClass: "fa fa-pencil",
     attrs: {
       "aria-hidden": "true"
     }
   })]), _vm._v(" "), _c('button', {
-    staticClass: "btn-delete"
+    staticClass: "btn-delete",
+    on: {
+      "click": function($event) {
+        _vm.deleteSet(_vm.set)
+      }
+    }
   }, [_c('i', {
     staticClass: "fa fa-trash",
     attrs: {
       "aria-hidden": "true"
     }
-  })])])
-}]}
+  })])])], 1), _vm._v(" "), _c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.isEditing),
+      expression: "isEditing"
+    }],
+    staticClass: "set-wrapper"
+  }, [_c('textarea', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.set.set),
+      expression: "set.set"
+    }],
+    staticClass: "set-textarea",
+    attrs: {
+      "rows": "8",
+      "cols": "25",
+      "placeholder": "Enter set title here...",
+      "maxlength": "120",
+      "autofocus": "",
+      "required": ""
+    },
+    domProps: {
+      "value": (_vm.set.set)
+    },
+    on: {
+      "keydown": [function($event) {
+        if (!('button' in $event) && _vm._k($event.keyCode, "enter", 13)) { return null; }
+        _vm.saveSet(_vm.set.id, _vm.set.set)
+      }, function($event) {
+        if (!('button' in $event) && _vm._k($event.keyCode, "esc", 27)) { return null; }
+        _vm.saveSet(_vm.set.id, _vm.set.set)
+      }],
+      "blur": function($event) {
+        _vm.saveSet(_vm.set.id, _vm.set.set)
+      },
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.set.set = $event.target.value
+      }
+    }
+  }), _vm._v(" "), _c('div', {
+    staticClass: "btn-save-wrapper"
+  }, [_c('button', {
+    staticClass: "btn-save",
+    on: {
+      "click": function($event) {
+        _vm.saveSet(_vm.set.id, _vm.set.set)
+      }
+    }
+  }, [_c('i', {
+    staticClass: "fa fa-floppy-o",
+    attrs: {
+      "aria-hidden": "true"
+    }
+  })]), _vm._v(" "), _c('button', {
+    staticClass: "btn-delete",
+    on: {
+      "click": function($event) {
+        _vm.deleteSet(_vm.set)
+      }
+    }
+  }, [_c('i', {
+    staticClass: "fa fa-trash",
+    attrs: {
+      "aria-hidden": "true"
+    }
+  })])])])])
+},staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
@@ -32401,6 +32648,166 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
      require("vue-hot-reload-api").rerender("data-v-5f98f9ec", module.exports)
+  }
+}
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-8f759b14\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/Flashcard.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "flashcard",
+    on: {
+      "dblclick": function($event) {
+        _vm.editFlashcard(_vm.flashcard.id, _vm.flashcard.flashcard)
+      }
+    }
+  }, [_c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (!_vm.isEditing),
+      expression: "!isEditing"
+    }],
+    staticClass: "flashcard-wrapper"
+  }, [_c('div', {
+    staticClass: "well well-md"
+  }, [_c('div', {
+    staticClass: "flashcard-p"
+  }, [_vm._v("\n        " + _vm._s(_vm.flashcard.flashcard) + "\n      ")])]), _vm._v(" "), _c('div', {
+    staticClass: "flashcard-icons"
+  }, [_c('button', {
+    staticClass: "btn-edit",
+    on: {
+      "click": function($event) {
+        _vm.editFlashcard(_vm.flashcard.id, _vm.flashcard.flashcard)
+      }
+    }
+  }, [_c('i', {
+    staticClass: "fa fa-pencil",
+    attrs: {
+      "aria-hidden": "true"
+    }
+  })]), _vm._v(" "), _c('button', {
+    staticClass: "btn-delete",
+    on: {
+      "click": function($event) {
+        _vm.deleteFlashcard(_vm.flashcard)
+      }
+    }
+  }, [_c('i', {
+    staticClass: "fa fa-trash",
+    attrs: {
+      "aria-hidden": "true"
+    }
+  })])])]), _vm._v(" "), _c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.isEditing),
+      expression: "isEditing"
+    }],
+    staticClass: "flashcard-wrapper"
+  }, [_c('div', {
+    staticClass: "well well-md"
+  }, [_c('textarea', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.flashcard.flashcard),
+      expression: "flashcard.flashcard"
+    }],
+    staticClass: "flashcard-textarea",
+    attrs: {
+      "rows": "8",
+      "cols": "25",
+      "placeholder": "Enter flashcard here...",
+      "maxlength": "120",
+      "autofocus": "",
+      "required": ""
+    },
+    domProps: {
+      "value": (_vm.flashcard.flashcard)
+    },
+    on: {
+      "keydown": [function($event) {
+        if (!('button' in $event) && _vm._k($event.keyCode, "enter", 13)) { return null; }
+        _vm.saveFlashcard(_vm.flashcard.id, _vm.flashcard.flashcard)
+      }, function($event) {
+        if (!('button' in $event) && _vm._k($event.keyCode, "esc", 27)) { return null; }
+        _vm.saveFlashcard(_vm.flashcard.id, _vm.flashcard.flashcard)
+      }],
+      "blur": function($event) {
+        _vm.saveFlashcard(_vm.flashcard.id, _vm.flashcard.flashcard)
+      },
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.flashcard.flashcard = $event.target.value
+      }
+    }
+  })]), _vm._v(" "), _c('div', {
+    staticClass: "btn-save-wrapper"
+  }, [_c('button', {
+    staticClass: "btn-save",
+    on: {
+      "click": function($event) {
+        _vm.saveFlashcard(_vm.flashcard.id, _vm.flashcard.flashcard)
+      }
+    }
+  }, [_c('i', {
+    staticClass: "fa fa-floppy-o",
+    attrs: {
+      "aria-hidden": "true"
+    }
+  })]), _vm._v(" "), _c('button', {
+    staticClass: "btn-delete",
+    on: {
+      "click": function($event) {
+        _vm.deleteFlashcard(_vm.flashcard)
+      }
+    }
+  }, [_c('i', {
+    staticClass: "fa fa-trash",
+    attrs: {
+      "aria-hidden": "true"
+    }
+  })])])])])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-8f759b14", module.exports)
+  }
+}
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-9ff5ee4e\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/AddFlashcard.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('button', {
+    staticClass: "btn-plus",
+    on: {
+      "click": _vm.createFlashcard
+    }
+  }, [_c('i', {
+    staticClass: "fa fa-plus",
+    attrs: {
+      "aria-hidden": "true"
+    }
+  }), _vm._v(" "), _c('span', {
+    staticClass: "flashcard-plus"
+  }, [_vm._v("Add term")])])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-9ff5ee4e", module.exports)
   }
 }
 
@@ -44639,8 +45046,8 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('sets', __webpack_require_
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('set', __webpack_require__("./resources/assets/js/components/Set.vue"));
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('add-set', __webpack_require__("./resources/assets/js/components/AddSet.vue"));
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('flashcards', __webpack_require__("./resources/assets/js/components/Flashcards.vue"));
-__WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('flashleft', __webpack_require__("./resources/assets/js/components/Flashleft.vue"));
-__WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('flashright', __webpack_require__("./resources/assets/js/components/Flashright.vue"));
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('flashcard', __webpack_require__("./resources/assets/js/components/Flashcard.vue"));
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('add-flashcard', __webpack_require__("./resources/assets/js/components/AddFlashcard.vue"));
 
 var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
   routes: __WEBPACK_IMPORTED_MODULE_2__routes__["a" /* default */]
@@ -44654,10 +45061,11 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
   router: router,
 
   data: function data() {
-    // Initialize notes and sets array
+    // Initialize notes, sets, and flashcards array
     return {
       notes: [],
-      sets: []
+      sets: [],
+      flashcards: []
     };
   },
 
@@ -44689,6 +45097,16 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
         console.log(response);
         _this2.notes.push(note);
       });
+    },
+
+    // Push set to sets array
+    pushSet: function pushSet(set) {
+      this.sets.push(set);
+    },
+
+    // Push flashcard to flashcards array
+    pushFlashcard: function pushFlashcard(flashcard) {
+      this.flashcards.push(flashcard);
     }
   }
 });
@@ -44738,6 +45156,41 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     broadcaster: 'pusher',
 //     key: 'your-pusher-key'
 // });
+
+/***/ }),
+
+/***/ "./resources/assets/js/components/AddFlashcard.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")(
+  /* script */
+  __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/AddFlashcard.vue"),
+  /* template */
+  __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-9ff5ee4e\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/AddFlashcard.vue"),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "/home/ubuntu/workspace/stec4450-project/resources/assets/js/components/AddFlashcard.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] AddFlashcard.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-9ff5ee4e", Component.options)
+  } else {
+    hotAPI.reload("data-v-9ff5ee4e", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
 
 /***/ }),
 
@@ -44811,6 +45264,41 @@ module.exports = Component.exports
 
 /***/ }),
 
+/***/ "./resources/assets/js/components/Flashcard.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")(
+  /* script */
+  __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Flashcard.vue"),
+  /* template */
+  __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-8f759b14\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/Flashcard.vue"),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "/home/ubuntu/workspace/stec4450-project/resources/assets/js/components/Flashcard.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] Flashcard.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-8f759b14", Component.options)
+  } else {
+    hotAPI.reload("data-v-8f759b14", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+
 /***/ "./resources/assets/js/components/Flashcards.vue":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -44838,76 +45326,6 @@ if (false) {(function () {
     hotAPI.createRecord("data-v-540cbd6d", Component.options)
   } else {
     hotAPI.reload("data-v-540cbd6d", Component.options)
-  }
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-
-/***/ "./resources/assets/js/components/Flashleft.vue":
-/***/ (function(module, exports, __webpack_require__) {
-
-var Component = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")(
-  /* script */
-  __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Flashleft.vue"),
-  /* template */
-  __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-1f3003ed\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/Flashleft.vue"),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-Component.options.__file = "/home/ubuntu/workspace/stec4450-project/resources/assets/js/components/Flashleft.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] Flashleft.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-1f3003ed", Component.options)
-  } else {
-    hotAPI.reload("data-v-1f3003ed", Component.options)
-  }
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-
-/***/ "./resources/assets/js/components/Flashright.vue":
-/***/ (function(module, exports, __webpack_require__) {
-
-var Component = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")(
-  /* script */
-  __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Flashright.vue"),
-  /* template */
-  __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-041593a6\"}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/Flashright.vue"),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-Component.options.__file = "/home/ubuntu/workspace/stec4450-project/resources/assets/js/components/Flashright.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] Flashright.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-041593a6", Component.options)
-  } else {
-    hotAPI.reload("data-v-041593a6", Component.options)
   }
 })()}
 
@@ -45120,7 +45538,7 @@ $(function () {
 /**
  * Here, we'll use this as a dedicated file to set up our routing here.
  */
-/* harmony default export */ __webpack_exports__["a"] = ([{ path: '/reminders', component: __webpack_require__("./resources/assets/js/components/Reminders.vue") }, { path: '/sets', component: __webpack_require__("./resources/assets/js/components/Sets.vue") }]);
+/* harmony default export */ __webpack_exports__["a"] = ([{ path: '/reminders', component: __webpack_require__("./resources/assets/js/components/Reminders.vue") }, { path: '/sets', component: __webpack_require__("./resources/assets/js/components/Sets.vue") }, { path: '/sets/:set_id/flashcards/:flashcard_id', component: __webpack_require__("./resources/assets/js/components/Flashcards.vue") }]);
 
 /***/ }),
 

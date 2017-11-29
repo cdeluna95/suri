@@ -1,0 +1,100 @@
+/**
+ * Flashcard styles
+ */
+.flashcard {
+  position: relative;
+  width: 50%;
+  @include deviceBreak("max-width: 767.5px") {
+    width: 100%;
+  }
+  
+  .flashcard-wrapper {
+    
+    .well-md {
+      border-radius: 0;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+      margin: 0 10px 20px;
+      
+      .flashcard-p {
+        display: inline;
+        @include textStyle(lighten($black, 25%), $lato, 16px, normal, null, null, null, null, null);
+      }
+    }
+    
+    .flashcard-icons {
+      @include posLayout(absolute, $top: 22.5px, $right: 20px);
+      
+      .btn-edit,
+      .btn-delete {
+        @include btnStyle(none, 0, 0, none, 0 10px);
+      }
+      
+      .fa-pencil,
+      .fa-trash {
+        font-size: 20px;
+        opacity: 0.5;
+        @extend %light-ease;
+        
+        &:hover {
+          opacity: 1;
+        }
+      }
+      
+      .fa-pencil {
+        
+        &:hover {
+          color: $green;
+        }
+      }
+      
+      .fa-trash {
+        
+        &:hover {
+          color: $red;
+        }
+      }
+    }
+    
+    .flashcard-textarea {
+      resize: none;
+      @include textStyle(lighten($black, 25%), $lato, 16px, normal, null, null, null, null, null);
+      @include btnStyle(rgba($black, 0), 0, 0, none, 0);
+      @include displayProps(block, $width: 100%, $height: 22.5px);
+    }
+    
+    .btn-save-wrapper {
+      z-index: 1;
+      @include posLayout(absolute, $top: 22.5px, $right: 20px);
+      
+      .btn-save,
+      .btn-delete {
+        @include btnStyle(none, 0, 0, none, 0 10px);
+      }
+      
+      .fa-floppy-o,
+      .fa-trash {
+        font-size: 20px;
+        opacity: 0.5;
+        @extend %light-ease;
+        
+        &:hover {
+          opacity: 1;
+        }
+      }
+      
+      .fa-floppy-o {
+        
+        &:hover {
+          color: darken($blue, 25%);
+        }
+      }
+      
+      .fa-trash {
+        
+        &:hover {
+          color: $red;
+        }
+      }
+    }
+  }
+}

@@ -15,7 +15,7 @@
         <add-set @set-created="pushSet"></add-set>
       </div>
       <div class="sets-img-wrapper">
-        <img class="sets-img img-auto" src="images/set.png">
+        <img class="sets-img img-auto" src="images/folder.jpg">
       </div>
     </div><!-- sets-empty -->
     
@@ -26,8 +26,9 @@
       v-for="(set, index) in sets"
       :set="set"
       :index="index"
-      :key="set.id">
-    </set> <!-- set -->
+      :key="set.id"
+      @set-deleted="spliceSet(set.id)">
+    </set><!-- set -->
     
   </div><!-- sets -->
 </template>
@@ -42,6 +43,12 @@
       // Push set to sets array
       pushSet: function(set) {
         this.sets.push(set);
+      },
+      
+      // Remove set from array
+      spliceSet: function(id) {
+        var index = this.sets.indexOf(id);
+        this.sets.splice(index, 1);
       }
     }
     

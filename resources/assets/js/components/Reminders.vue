@@ -28,7 +28,7 @@
       :index="index"
       :key="note.id"
       @note-deleted="spliceNote(note.id)">
-    </note> <!-- note -->
+    </note><!-- note -->
     
   </div><!-- reminders -->
 </template>

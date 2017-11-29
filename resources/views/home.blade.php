@@ -86,7 +86,8 @@
     <div class="feed-wrapper">
       <router-view
         :notes="notes"
-        :sets="sets">
+        :sets="sets"
+        :flashcards="flashcards">
       </router-view>
     </div>
   </div><!-- feed -->

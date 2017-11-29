@@ -21,9 +21,11 @@
       </h2>
     </div>
     
-    <!-- Add note -->
+    <!-- Add note or set -->
     <div class="header-add">
-      <add-note @note-created="pushNote"></add-note>
+      <add-note @note-created="pushNote" v-if="$route.path === '/reminders'"></add-note>
+      <add-set @set-created="pushSet" v-if="$route.path === '/sets'"></add-set>
+      <add-flashcard @flashcard-created="pushFlashcard" v-if="$route.path === '/sets/:set_id/flashcards/:flashcard_id'"></add-flashcard>
     </div>
     
   </div><!-- header-wrapper -->

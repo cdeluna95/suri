@@ -26,8 +26,8 @@ Vue.component('sets', require('./components/Sets.vue'));
 Vue.component('set', require('./components/Set.vue'));
 Vue.component('add-set', require('./components/AddSet.vue'));
 Vue.component('flashcards', require('./components/Flashcards.vue'));
-Vue.component('flashleft', require('./components/Flashleft.vue'));
-Vue.component('flashright', require('./components/Flashright.vue'));
+Vue.component('flashcard', require('./components/Flashcard.vue'));
+Vue.component('add-flashcard', require('./components/AddFlashcard.vue'));
 
 const router = new VueRouter({
   routes: Routes
@@ -41,10 +41,11 @@ const app = new Vue({
     router: router,
     
     data: function() {
-      // Initialize notes and sets array
+      // Initialize notes, sets, and flashcards array
       return {
         notes: [],
-        sets: []
+        sets: [],
+        flashcards: []
       };
     },
     
@@ -75,6 +76,16 @@ const app = new Vue({
             console.log(response);
             this.notes.push(note);
           });
+      },
+      
+      // Push set to sets array
+      pushSet: function(set) {
+        this.sets.push(set);
+      },
+      
+      // Push flashcard to flashcards array
+      pushFlashcard: function(flashcard) {
+        this.flashcards.push(flashcard);
       }
     }
 });

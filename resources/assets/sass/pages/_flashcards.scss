@@ -1,67 +1,60 @@
 /**
- * Flashcards styles
+ * Feed styles
  */
-.flashcards {
+#feed {
+  // Defined in reminders
   
-  .container-fluid {
-    @include deviceBreak('max-width: 767.5px') {
-      margin: 0;
-      padding: 0;
-    }
+  .feed-wrapper {
+    // Defined in reminders
     
-    .row {
-      @include deviceBreak('max-width: 767.5px') {
-        margin: 0 0 10px 0;
-      }
+    /**
+     * Flashcards styles
+     */
+    .flashcards {
+      @include flexContLayout(flex, $direction: row, $wrap: wrap, $justify-content: center);
       
-      .col-md-6 {
-        padding: 0 2.5px 0 10px;
-        @include deviceBreak('max-width: 767.5px') {
-          padding: 0 5px;
+      .flashcards-empty {
+        text-align: center;
+        
+        .flashcards-empty-h2,
+        .flashcards-empty-p {
+          opacity: 0;
+          animation: fadeOut 1000ms ease forwards;
+          @include textStyle(lighten($black, 25%), $lato, null, normal, null, null, null, null, -0.5px);
         }
         
-        .well-md {
-          border-radius: 0;
-          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+        .flashcards-empty-h2 {
+          animation-delay: 0ms;
+        }
+        
+        .flashcards-empty-p {
+          animation-delay: 200ms;
+        }
+        
+        .flashcards-add {
+          margin: 40px 0;
+          opacity: 0;
+          animation: zoom 1000ms ease 400ms forwards;
           
-          .flashcards-p {
-            display: inline;
-            @include textStyle(lighten($black, 25%), $lato, 16px, normal, null, null, null, null, null);
+          .btn-plus {
+            display: inline-block;
+            @include btnStyle($hotpink, 0, 0, none, 10px 20px 11px);
+            @include textStyle(darken($white, 5%), $lato, 16px, 900, null, null, null, null, null);
           }
           
-          .flashcards-icons {
-            @include posLayout(absolute, $top: 22.5px, $right: 20px);
-            
-            .btn-edit,
-            .btn-delete {
-              @include btnStyle(none, 0, 0, none, 0 10px);
-            }
-            
-            .fa-pencil,
-            .fa-trash {
-              font-size: 20px;
-              opacity: 0.5;
-              @extend %light-ease;
-              
-              &:hover {
-                opacity: 1;
-              }
-            }
-            
-            .fa-pencil {
-              
-              &:hover {
-                color: $green;
-              }
-            }
-            
-            .fa-trash {
-              
-              &:hover {
-                color: $red;
-              }
-            }
+          .fa {
+            margin: 0 5px 0 0;
           }
+          
+          .flashcards-plus {
+            margin: 0 0 0 5px;
+          }
+        }
+        
+        .flashcards-img-wrapper {
+          margin: 60px 0;
+          opacity: 0;
+          animation: zoom 1000ms ease 600ms forwards;
         }
       }
     }
