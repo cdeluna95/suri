@@ -85,7 +85,7 @@
                 </a>
               </li>
               <li>
-                <a href="{{ route('home') }}#/flashcards">
+                <a href="{{ route('home') }}#/sets">
                   Flashcards
                 </a>
               </li>

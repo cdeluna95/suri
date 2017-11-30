@@ -5,7 +5,7 @@
       Show in non-editing mode
       ------------------------->
     <div class="set-wrapper" v-show="!isEditing">
-      <router-link class="set-h3" :class="{ 'active': isActive }" :to="'/sets/' + setObj.set_id + '/flashcards/' + flashcardObj.flashcard_id" exact>
+      <router-link class="set-h3" :class="{ 'active': isActive }" :to="'/sets/:set_id/flashcards/:flashcard_id'" exact>
         {{ set.set }}
       </router-link>
       <div class="set-icons">

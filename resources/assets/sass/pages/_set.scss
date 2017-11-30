@@ -8,6 +8,9 @@
   position: relative;
   @extend %regular-ease;
   @include displayProps(block, $width: 300px, $height: 200px, $margin: 40px);
+  @include deviceBreak('max-width: 767.5px') {
+    margin: 20px 5px;
+  }
   
   &:after {
     content: '';

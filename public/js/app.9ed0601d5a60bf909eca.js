@@ -32415,7 +32415,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       'active': _vm.isActive
     },
     attrs: {
-      "to": '/sets/' + _vm.setObj.set_id + '/flashcards/' + _vm.flashcardObj.flashcard_id,
+      "to": '/sets/:set_id/flashcards/:flashcard_id',
       "exact": ""
     }
   }, [_vm._v("\n      " + _vm._s(_vm.set.set) + "\n    ")]), _vm._v(" "), _c('div', {
