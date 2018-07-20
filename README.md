@@ -1,4 +1,10 @@
 # Suri
+
+![Suri Homepage Guest](resources/assets/images/suri-homepage.png)
+
+![Suri Homepage Logged In](resources/assets/images/suri-homepage-logged-in.png)
+
+## Overview
 Student-learning single-page web application for STEC 4500 (Undergraduate Research)
 
 ## Installation
